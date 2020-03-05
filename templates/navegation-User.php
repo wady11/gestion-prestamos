@@ -1,9 +1,22 @@
-    
+     <?php
+     try {
+      require_once("funciones/conexion.php");
+      $sql ='SELECT `Tipo_usuario` FROM `login`';
+      $resultado = $conn->query($sql);
+
+     } catch (\Throwable $th) {
+       $error = $th->getmessage();
+     }
+     
+     
+     
+     ?>
+     
      
      <!-- Main Sidebar Container -->
   <aside class="main-sidebar sidebar-dark-primary elevation-4">
     <!-- Brand Logo -->
-    <a href="/Admin-LTE/Admin-index.php" class="brand-link">
+    <a href="/Admin-LTE/User-index.php" class="brand-link">
       <img src="img/logo-128.png"
            alt="AdminLTE Logo"
            class="brand-image img-circle elevation-3"
@@ -117,21 +130,21 @@
               <i class="nav-icon fas fa-user-tie"></i>
               
               <p>
-                 Administrador
+                 User
                 <i class="fas fa-angle-left right"></i>
               </p>
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="/Admin-LTE/List-admin.php" class="nav-link">
+                <a href="/Admin-LTE/List-user.php" class="nav-link">
                   <i class="fas fa-list nav-icon"></i>
                   <p>Ver Todos</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="/Admin-LTE/Create-admin.php" class="nav-link">
+                <a href="/Admin-LTE/Create-user.php" class="nav-link">
                   <i class="fas fa-user-plus nav-icon"></i>
-                  <p>Agregar Usuario</p>
+                  <p>Agregar Clientes</p>
                 </a>
               </li>
           

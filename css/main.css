@@ -1,0 +1,17 @@
+.card{
+    width: 50%;
+}
+section.content {
+    display: flex;
+    justify-content: center;
+}
+.card-login{
+    width: auto;
+}
+.main-footer{
+    display: none;
+}
+.card-body{
+    border-radius: 10px;
+}
+

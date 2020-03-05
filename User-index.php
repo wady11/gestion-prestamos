@@ -1,8 +1,8 @@
 <?php
  include_once("funciones/sesiones.php");
  include_once("templates/header.php");
- include_once("templates/header-bar.php");
- include_once("templates/navegation.php");
+ include_once("templates/header-bar-user.php");
+ include_once("templates/navegation-User.php");
 ?>
 
   <!-- Content Wrapper. Contains page content -->
@@ -12,11 +12,11 @@
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
-            <h1>Blank Page</h1>
+            <h1>Blank Page User</h1>
           </div>
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
-              <li class="breadcrumb-item"><a href="#">Home</a></li>
+              <li class="breadcrumb-item"><a href="/Admin-LTE/User-index.php">Home</a></li>
               <li class="breadcrumb-item active">Blank Page</li>
             </ol>
           </div>
