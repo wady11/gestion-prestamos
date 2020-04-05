@@ -18,8 +18,7 @@ if(isset($_POST['add-admin'])){
 
     try {
         //conexion a la base de datos
-        
-        
+   
         $sthm = $conn->prepare("INSERT INTO `login` (user,name,password) values(?,?,?)");//insert table with
         $sthm->bind_param('sss',$user,$name,$password_hashed);//para que sea segura 
 
@@ -132,7 +131,7 @@ if(isset($_POST['send-login'])){
 //insert user
 if(isset($_POST['add-user'])){
 
-
+   //variable
     $nombreUsuario = $_POST['name'];
     $apellidoUsuario = $_POST['lastName'];
     $emailUsuario = $_POST['email'];
@@ -145,31 +144,40 @@ if(isset($_POST['add-user'])){
     $acountBankUsuario = $_POST['bancAccount'];
     $dateUsuario = $_POST['date'];
     $cedulaUsuario = $_POST['cedula'];
-  
-    try {
-        $sthm = $conn->prepare("INSERT INTO `user` user_name user_astname,user_ mailuser_addres,usr_cedula,use _telehone,user_c llphone,user_city,user_town,user_bank,user_bankaccount,user_date) values(?,?,?,?,?,?,?,?,?,?,?,?)");//insert table with
-        $sthm->bind_param('ssssssssssss',$nombreUsuario,$apellidoUsuario,$emailUsuario,$direccionUsuario,$cedulaUsuario,$telephonoUsuario,$cellphoneUsuario,$cityUsuario,$townUsuario,$bankUsuario,$acountBankUsuario,$dateUsuario);//para que sea segura 
 
-        $sthm->execute();//execute conexion
-         
-        //if any rows was affect
-       if( mysqli_affected_rows($conn) > 0){
-            $answer = array(
-                'resolve' => 'success',
-                'usuario'=> $nombreUsuario,
-                'lastName' => $apellidoUsuario  
-            );        
-            
-         }else{
-            $answer = array(
-                'resolve' => 'reject',
-                'usuario'=> $nombreUsuario,
-                'lastName' => $apellidoUsuario
-                
-            );
-        }
-    
+    try {
+        $sthm = $conn->prepare("INSERT INTO `user` (user_name,user_lastname,user_email,user_address,user_cedula,user_telephone,user_cellphone,user_city,user_town,user_bank,user_bankaccount,user_date) VALUES(?,?,?,?,?,?,?,?,?,?,?,?)");//insert table with
+        $sthm->bind_param("ssssssssssss",$nombreUsuario,$apellidoUsuario,$emailUsuario,$direccionUsuario,$cedulaUsuario,$telephonoUsuario,$cellphoneUsuario,$cityUsuario,$townUsuario,$bankUsuario,$acountBankUsuario,$dateUsuario);//para que sea segura 
         
+       
+        $sthm->execute();//execute conexion
+
+        //if any rows was affect
+        if(empty($nombreUsuario) & empty($cedulaUsuario)){
+            $answer = array (
+                'nombre' => 'vacio',
+                'apellido' => 'vacio'
+            );
+        }else{
+            if( mysqli_affected_rows($conn) > 0){
+                $answer = array(
+                    'resolve' => 'success',
+                    'usuario'=> $nombreUsuario,
+                    'lastName' => $apellidoUsuario  
+                );        
+                
+             }else{
+                $answer = array(
+                    'resolve' => 'reject',
+                    'usuario'=> $nombreUsuario,
+                    'lastName' => $apellidoUsuario
+                    
+                );
+            }
+        }
+       
+        
+    
         $sthm->close();//close the execute
         $conn->close();
 
@@ -178,15 +186,21 @@ if(isset($_POST['add-user'])){
 
     }
 
-    die(json_encode($answer));   
+   echo die(json_encode($answer));   
+
 }//add-user ends
 
+
+
+
+
 //update user
-if(isset($_POST['number-edit'])){
+if(isset($_POST['edit'])){
 
     // echo '<pre>';
     // var_dump($_POST);
     // echo '</pre>';
+    
     $nombreUsuario = $_POST['name'];
     $apellidoUsuario = $_POST['lastName'];
     $emailUsuario = $_POST['email'];
@@ -202,7 +216,7 @@ if(isset($_POST['number-edit'])){
     $id_user = $_POST['number-edit'];
       
         try {
-            $stament = $conn->prepare("UPDATE `user` SET user_name = ? ,user_lastname = ?,user_email= ?,user_address = ? ,user_cedula = ? ,user_telephone= ? ,user_cellphone = ? , user_city = ? ,user_town= ? ,user_bank = ? ,user_bankaccount = ? , user_date = ?, user_edit= NOW() WHERE user_id = ? ;");
+            $stament = $conn->prepare("UPDATE `user` SET user_name = ? ,user_lastname = ?,user_email= ?,user_address = ? ,user_cedula = ? ,user_telephone= ? ,user_cellphone = ? , user_city = ? ,user_town= ? ,user_bank = ? ,user_bankaccount = ? , user_date = ?, user_time= NOW() WHERE user_id = ? ;");
             $stament->bind_param('ssssssssssssi',$nombreUsuario,$apellidoUsuario,$emailUsuario,$direccionUsuario,$cedulaUsuario,$telephonoUsuario,$cellphoneUsuario,$cityUsuario,$townUsuario,$bankUsuario,$acountBankUsuario,$dateUsuario,$id_user);
              $stament->execute();
             if( mysqli_affected_rows($conn ) > 0){

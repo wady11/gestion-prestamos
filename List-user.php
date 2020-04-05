@@ -57,8 +57,8 @@
                   <th>Action</th>
                   <?php
                       //GENERATE  SECURE URL
-                    function GenerateURLSecure($method,$userId){
-                      return sha1($method) . "=". sha1($userId);
+                    function generateURLSecure($userId){
+                      return  sha1($userId);
                     }
                   
                   ?>
@@ -78,10 +78,10 @@
                       <td><?php echo $user['user_bankaccount']?></td>
                       <td><?php echo $user['user_telephone']?></td>
                       <td style="text-align:center">
-                          <a href="Edit-user.php?<?php echo GenerateURLSecure('id',$user['user_id']) ?>"  class="btn bg-orange btn-flat margin">
-                           <i class="fa fa-user-edit"></i>
+                          <a href="Edit-user.php?id=<?php echo generateURLSecure($user['user_id']) ?>"  title="actualizar"  class="btn bg-orange btn-flat margin">
+                           <i class="fa fa-user-edit" ></i>
                         </a>
-                        <a href=""  class="btn bg-orange btn-flat margin">
+                        <a href="panelUser.php?<?php echo generateURLSecure($user['user_id']) ?>" title="movimientos" class="btn bg-orange btn-flat margin">
                         <i class="fa fa-users-cog"></i>
                         </a>
 

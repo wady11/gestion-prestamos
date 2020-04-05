@@ -4,7 +4,7 @@
  include_once("funciones/conexion.php");
  include_once("templates/header.php");
  include_once("templates/header-bar.php");
- include_once("templates/navegation.php");
+ include_once("templates/navegation-User.php");
 
 ?>
 

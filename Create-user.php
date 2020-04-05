@@ -3,6 +3,7 @@
  include_once("templates/header.php");
  include_once("funciones/conexion.php");
  include_once("templates/navegation-User.php");
+ include_once("templates/header-bar-user.php")
 ?>
 
 
