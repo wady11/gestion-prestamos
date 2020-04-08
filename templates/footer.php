@@ -33,6 +33,12 @@
 <script src="js/function/service.js"></script>
 <!--App-->
 <script src="js/app.js"></script>
+<!--JQuery-ui-->
+<script src="js/jquery-ui-1.12.1/jquery-ui.min.js" type="text/javascript"></script>
+<!--dashboard3-->
+<script src="js/dashboard3.js"></script>
+<!-- OPTIONAL SCRIPTS -->
+<script src="js/Chart.min.js"></script>
 </body>
 
 </html>

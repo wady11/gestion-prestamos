@@ -1,5 +1,5 @@
 .card{
-    width: 50%;
+    width: 100%;
 }
 section.content {
     display: flex;
@@ -8,9 +8,9 @@ section.content {
 .card-login{
     width: auto;
 }
-.main-footer{
+/* .main-footer{
     display: none;
-}
+} */
 .card-body{
     border-radius: 10px;
 }
@@ -59,7 +59,7 @@ a {
 }
 
 span {
-    display: flex;
+    /* display: flex; */
 }
 
 

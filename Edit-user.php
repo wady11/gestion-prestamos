@@ -3,7 +3,7 @@
  include_once("templates/header.php");
  include_once("funciones/conexion.php");
  include_once("templates/navegation-User.php");
-
+ include_once("templates/header-bar-user.php");
  $id = $_GET['id'];
 ?>
 
@@ -156,7 +156,7 @@
 
   <input type="hidden" name="number-edit" value="<?php echo $currentId;?>">
   <input type="hidden" name="edit">
-  <button class="btn btn-primary" type="submit">Editar</button>
+  <button class="btn btn-primary" type="submit" title='editar' id='buttoneditar'>Editar</button>
 </form>
         </div><!--fin del card-body-->
 
