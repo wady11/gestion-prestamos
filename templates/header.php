@@ -19,6 +19,8 @@
   <link rel="stylesheet" href="css/main.css">
   <!-- DataTables -->
   <link rel="stylesheet" href="css/dataTables.bootstrap4.css">
+  <!-- summernote -->
+  <link rel="stylesheet" href="css/summernote-bs4.css">
   <!-- Google Font: Source Sans Pro -->
   <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
   <!--jquery-ui-->

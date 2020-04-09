@@ -243,7 +243,23 @@ img.bill {
     width: 29px;
     margin: 5px 10px 10px 29px;
 }
-
+/*******icon img*******/
+.icon-img {
+    /* font-size: 90px; */
+    position: absolute;
+    width: 67px;
+    right: -36px;
+    top: 8px;
+    transition: all .3s linear;
+    filter: grayscale(1);
+   -webkit-filter: grayscale(1);
+   transition: all .5s ease-in-out;
+}
+.icon-img:hover{
+    filter: grayscale(0);
+    -webkit-filter: grayscale(0);
+    transform: scale(1.7);
+}
 
 
 /***MEDIA QUERY***/

@@ -80,7 +80,7 @@
           </li>
           <li class="nav-item has-treeview">
             <a href="#" class="nav-link">
-              <i class="nav-icon fas fa-chart-pie"></i>
+              <i class="nav-icon fas fa-dollar-sign"></i>
               <p>
                 Prestamos
                 <i class="right fas fa-angle-left"></i>
