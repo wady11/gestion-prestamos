@@ -9,6 +9,12 @@ $(function () {
   });
 });
 
+//JQUERY-UI
+$('#tooltiphome').tooltip();
+$('#tooltipcalcu').tooltip();
+$('.addbottom').tooltip();
+
+
 'use strict';
 
 (function(){
@@ -283,13 +289,9 @@ $(function () {
      
       }
     })
-
-    //JQUERY-UI
-    $('#buttoneditar').tooltip();
-    $('#agregarButtom').tooltip();
-    $('#tooltipcontact').tooltip();
-    $('#tooltiphome').tooltip();
+    
 
   // });//DOCUMENT CONTENT LOADED
+  
 }());
   

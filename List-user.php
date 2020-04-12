@@ -14,12 +14,6 @@
           <div class="col-sm-6">
             <h1>Lista de  Clientes</h1>
           </div>
-          <div class="col-sm-6">
-            <ol class="breadcrumb float-sm-right">
-              <li class="breadcrumb-item"><a href="/Admin-LTE/User-index.php">Home</a></li>
-              <li class="breadcrumb-item active"><a href="/Admin-LTE/Create-user.php">Add Cliente</a></li>
-            </ol>
-          </div>
         </div>
       </div><!-- /.container-fluid -->
     </section>
@@ -41,7 +35,8 @@
 
           <div class="card" style="width:100%">
             <div class="card-header">
-              <h3 class="card-title">Lista de Beneficiarios</h3>
+              <!-- <h3 class="card-title">Lista de Beneficiarios</h3> -->
+              <a class="btn btn-warning  addbottom"  href="/Admin-LTE/Create-user.php" title='registrar'  role="button">REGISTRAR</a>
             </div>
             <!-- /.card-header -->
             <div class="card-body">
@@ -53,7 +48,7 @@
                   <th>Celular</th>
                   <th>Cedula</th>
                   <th>Cuenta de Banco</th>
-                  <th>Balance Adeudado</th>
+                  <th>Balance</th>
                   <th>Action</th>
                   <?php
                       //GENERATE  SECURE URL
@@ -102,7 +97,7 @@
                   <th>Celular</th>
                   <th>Cedula</th>
                   <th>Cuenta de Banco</th>
-                  <th>Balance Adeudado</th>
+                  <th>Balance</th>
                   <th>Action</th>
                 </tr>
                 </tfoot>

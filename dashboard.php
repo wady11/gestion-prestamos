@@ -66,7 +66,7 @@ to get the desired effect
               <div class="icon">
                  <img src="img/clients.ico" class="icon-img" alt="clientes">
               </div>
-              <a href="#" class="small-box-footer" title="mas informacion">More info <i class="fas fa-arrow-circle-right"></i></a>
+              <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
             </div>
           </div>
           <!-- ./col -->
@@ -74,12 +74,12 @@ to get the desired effect
             <!-- small box -->
             <div class="small-box bg-warning">
               <div class="inner">
-                <h3>44</h3>
+                <h3>2,000,000</h3>
 
-                <p>User Registrations</p>
+                <p>Pagos</p>
               </div>
               <div class="icon">
-                <i class="ion ion-person-add" style="right:49px"></i>
+              <img src="img/dollar.ico" class="icon-img" alt="Dollar">
               </div>
               <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
             </div>
@@ -89,12 +89,12 @@ to get the desired effect
             <!-- small box -->
             <div class="small-box bg-danger">
               <div class="inner">
-                <h3>65</h3>
+                <h3>1</h3>
 
-                <p>Unique Visitors</p>
+                <p>Grafico</p>
               </div>
               <div class="icon">
-                <i class="ion ion-pie-graph"  style="right:49px"></i>
+              <img src="img/stats.ico" class="icon-img" alt="Dollar">
               </div>
               <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
             </div>
