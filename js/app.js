@@ -7,6 +7,14 @@ $(function () {
     "info": true,
     "autoWidth": false,
   });
+  $("#evento").DataTable({
+    "paging": true,
+    "lengthChange": true,
+    "searching": false,
+    "ordering": true,
+    "info": true,
+    "autoWidth": true,
+  });
 });
 
 //JQUERY-UI

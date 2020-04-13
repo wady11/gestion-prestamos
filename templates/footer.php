@@ -34,8 +34,8 @@
 <script src="js/function/admin-ajax.js"></script>
 <!--App-->
 <script src="js/app.js"></script>
-<!-- dashboard
-<script src="js/dashboard.js"></script> -->
+<!-- dashboard-->
+<script src="js/function/calculadora.js"></script> 
 
 </body>
 
