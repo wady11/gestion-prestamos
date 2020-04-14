@@ -19,6 +19,7 @@
   <link rel="stylesheet" href="css/main.css">
   <!-- DataTables -->
   <link rel="stylesheet" href="css/dataTables.bootstrap4.css">
+  <link rel="stylesheet" href="css/responsive.bootstrap4.min.css">
    <!--jquery-ui-->
   <link rel="stylesheet" href="css/jquery-ui.min.css">
   <link rel="stylesheet" href="css/jquery-ui.structure.min.css">

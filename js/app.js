@@ -6,6 +6,7 @@ $(function () {
     "ordering": true,
     "info": true,
     "autoWidth": false,
+    "responsive": true
   });
   $("#evento").DataTable({
     "paging": true,
@@ -13,7 +14,8 @@ $(function () {
     "searching": false,
     "ordering": true,
     "info": true,
-    "autoWidth": true,
+    "autoWidth": false,
+    "responsive": true
   });
 });
 

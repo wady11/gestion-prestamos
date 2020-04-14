@@ -22,8 +22,10 @@
 <!-- daterangepicker -->
 <script src="js/moment.min.js"></script>
 <!--Datatables-->
-<script src="js/jquery.dataTables.min.js"></script>
-<script src="js/dataTables.bootstrap4.min.js"></script>
+<script src="js/datatable/jquery.dataTables.min.js"></script>
+<script src="js/dataTable/dataTables.responsive.min.js"></script>
+<script src="js/dataTable/dataTables.bootstrap4.min.js"></script>
+<script src="js/dataTable/responsive.bootstrap4.min.js"></script>
 <!-- AdminLTE App -->
 <script src="js/adminlte.min.js"></script>
 <!-- AdminLTE for demo purposes -->
