@@ -3,6 +3,7 @@
  include_once("templates/header.php");
  include_once("funciones/conexion.php");
  include_once("templates/navegation-User.php");
+ include_once("templates/header-bar-user.php")
 ?>
 
 
@@ -122,9 +123,9 @@
 
     <div class="col-md-4 mb-3">
       <label for="cedula">Cedula</label>
-      <input type="text" class="form-control is-valid" name="cedula" id="cedula" placeholder="Cedula"  >
+      <input type="text" class="form-control is-valid" name="cedula"  id="cedula" placeholder="Cedula"  >
       <div class="valid-feedback">
-        <!-- Looks good! -->
+        
       </div>
     </div>
     </div>
@@ -132,7 +133,7 @@
   </div>
 
   <input type="hidden" name="add-user" value="1">
-  <button class="btn btn-primary" type="submit">Agregar</button>
+  <button class="btn btn-primary" type="submit" title='agregar' id="agregarButtom">Agregar</button>
 </form>
         </div><!--fin del card-body-->
 

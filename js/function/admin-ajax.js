@@ -78,9 +78,9 @@ doc.addEventListener('DOMContentLoaded',()=>{
                         ) 
                         //intervalor para que mande a la pagina principal
                        setTimeout(()=>{
-                            window.location.href = "../Admin-LTE/Admin-index.php"
+                            window.location.href = "http://localhost:83/Admin-LTE/dashboard.php"
                        }, 1000)                      
-                    }
+                    }   
                     else if(resultado.respuesta == 'reject'){
                         Swal.fire(
                             'ooops',
@@ -111,7 +111,7 @@ doc.addEventListener('DOMContentLoaded',()=>{
                         ) 
                         //intervalor para que mande a la pagina principal
                        setTimeout(()=>{
-                            window.location.href = "../Admin-LTE/User-index.php"
+                            window.location.href = "http://localhost:83/Admin-LTE/dashboard.php"
                        }, 1000)  
                     }
                     
@@ -204,6 +204,7 @@ doc.addEventListener('DOMContentLoaded',()=>{
             
         });//edit-user ends
 
+        
        
 });//DOM CONTENT LOADED
 

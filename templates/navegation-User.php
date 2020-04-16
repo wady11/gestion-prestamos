@@ -16,7 +16,7 @@
      <!-- Main Sidebar Container -->
   <aside class="main-sidebar sidebar-dark-primary elevation-4">
     <!-- Brand Logo -->
-    <a href="/Admin-LTE/User-index.php" class="brand-link">
+    <a href="/Admin-LTE/dashboard.php" class="brand-link">
       <img src="img/logo-128.png"
            alt="AdminLTE Logo"
            class="brand-image img-circle elevation-3"
@@ -31,25 +31,7 @@
         <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
           <!-- Add icons to the links using the .nav-icon class
                with font-awesome or any other icon font library -->
-          <li class="nav-item has-treeview">
-            <a href="#" class="nav-link">
-              <i class="nav-icon fas fa-tachometer-alt"></i>
-              <p>
-                Dashboard
-                <i class="right fas fa-angle-left"></i>
-              </p>
-            </a>
-            <ul class="nav nav-treeview">
-              
-              <li class="nav-item">
-                <a href="../../index2.html" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Dashboard v2</p>
-                </a>
-              </li>
-              
-            </ul>
-          </li>
+          
           <li class="nav-item">
             <a href="../widgets.html" class="nav-link">
               <i class="nav-icon fas fa-th"></i>
@@ -98,29 +80,29 @@
           </li>
           <li class="nav-item has-treeview">
             <a href="#" class="nav-link">
-              <i class="nav-icon fas fa-chart-pie"></i>
+              <i class="nav-icon fas fa-dollar-sign"></i>
               <p>
-                Charts
+                Prestamos
                 <i class="right fas fa-angle-left"></i>
               </p>
             </a>
             <ul class="nav nav-treeview">
-              <li class="nav-item">
+              <!-- <li class="nav-item">
                 <a href="../charts/chartjs.html" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>ChartJS</p>
                 </a>
-              </li>
+              </li> -->
               <li class="nav-item">
-                <a href="../charts/flot.html" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Flot</p>
+                <a href="#" class="nav-link">
+                <i class="fas fa-list nav-icon"></i>
+                  <p>Lista de Prestamos</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="../charts/inline.html" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Inline</p>
+                <a href="#" class="nav-link">
+                  <i class="fas fa-money-bill"></i>
+                  <p>Prestamo nuevo</p>
                 </a>
               </li>
             </ul>
@@ -138,7 +120,7 @@
               <li class="nav-item">
                 <a href="/Admin-LTE/List-user.php" class="nav-link">
                   <i class="fas fa-list nav-icon"></i>
-                  <p>Ver Todos</p>
+                  <p>Lista Cliente</p>
                 </a>
               </li>
               <li class="nav-item">

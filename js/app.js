@@ -6,8 +6,24 @@ $(function () {
     "ordering": true,
     "info": true,
     "autoWidth": false,
+    "responsive": true
+  });
+  $("#evento").DataTable({
+    "paging": true,
+    "lengthChange": true,
+    "searching": false,
+    "ordering": true,
+    "info": true,
+    "autoWidth": false,
+    "responsive": true
   });
 });
+
+//JQUERY-UI
+$('#tooltiphome').tooltip();
+$('#tooltipcalcu').tooltip();
+$('.addbottom').tooltip();
+
 
 'use strict';
 
@@ -57,6 +73,7 @@ $(function () {
           validFeedback[0].style.color = 'red';
           userName.style.borderColor = "red"; 
           validFeedback[0].innerHTML = 'looks bad';
+          validFeedback[0].style.display = 'block'
         }
      })
 
@@ -73,7 +90,8 @@ $(function () {
         userLastname.classList.remove('is-valid')
           userLastname.classList.add('is-invalid');
        validFeedback[1].style.color = 'red';
-       validFeedback[1].innerHTML = 'Este Campo debe ser llenado'
+       validFeedback[1].innerHTML = 'Este Campo debe ser llenado';
+       validFeedback[1].style.display = 'block'
        userLastname.style.borderColor = 'red';
      
       }
@@ -92,7 +110,8 @@ $(function () {
         userEmail.classList.remove('is-valid')
         userEmail.classList.add('is-invalid');
        validFeedback[2].style.color = 'red';
-       validFeedback[2].innerHTML = 'Este Campo debe ser llenado'
+       validFeedback[2].innerHTML = 'Este Campo debe ser llenado';
+       validFeedback[2].style.display = 'block'
        userEmail.style.borderColor = 'red';
      
       }
@@ -111,7 +130,8 @@ $(function () {
         userAddress.classList.remove('is-valid')
         userAddress.classList.add('is-invalid');
        validFeedback[3].style.color = 'red';
-       validFeedback[3].innerHTML = 'Este Campo debe ser llenado'
+       validFeedback[3].innerHTML = 'Este Campo debe ser llenado';
+       validFeedback[3].style.display = 'block'
        userAddress.style.borderColor = 'red';
      
       }
@@ -130,7 +150,8 @@ $(function () {
         userTelephone.classList.remove('is-valid')
         userTelephone.classList.add('is-invalid');
        validFeedback[4].style.color = 'red';
-       validFeedback[4].innerHTML = 'Este Campo debe ser llenado'
+       validFeedback[4].innerHTML = 'Este Campo debe ser llenado';
+       validFeedback[4].style.display = 'block'
        userTelephone.style.borderColor = 'red';
      
       }
@@ -149,7 +170,8 @@ $(function () {
         userCellphone.classList.remove('is-valid')
         userCellphone.classList.add('is-invalid');
        validFeedback[5].style.color = 'red';
-       validFeedback[5].innerHTML = 'Este Campo debe ser llenado'
+       validFeedback[5].innerHTML = 'Este Campo debe ser llenado';
+       validFeedback[5].style.display = 'block'
        userCellphone.style.borderColor = 'red';
      
       }
@@ -168,7 +190,8 @@ $(function () {
         userCity.classList.remove('is-valid')
         userCity.classList.add('is-invalid');
        validFeedback[6].style.color = 'red';
-       validFeedback[6].innerHTML = 'Este Campo debe ser llenado'
+       validFeedback[6].innerHTML = 'Este Campo debe ser llenado';
+       validFeedback[6].style.display = 'block';
        userCity.style.borderColor = 'red';
      
       }
@@ -187,7 +210,8 @@ $(function () {
         userTown.classList.remove('is-valid')
         userTown.classList.add('is-invalid');
        validFeedback[7].style.color = 'red';
-       validFeedback[7].innerHTML = 'Este Campo debe ser llenado'
+       validFeedback[7].innerHTML = 'Este Campo debe ser llenado';
+       validFeedback[7].style.display = 'block';
        userTown.style.borderColor = 'red';
      
       }
@@ -207,6 +231,7 @@ $(function () {
         userBanc.classList.add('is-invalid');
        validFeedback[8].style.color = 'red';
        validFeedback[8].innerHTML = 'Este Campo debe ser llenado'
+       validFeedback[8].style.display = 'block'
        userBanc.style.borderColor = 'red';
      
       }
@@ -219,13 +244,15 @@ $(function () {
         userBancaccount.classList.add('is-valid');
          validFeedback[9].innerHTML = 'Looks good!';
          userBancaccount.style.borderColor = '#13e013'
-         validFeedback[9].style.color = '#13e013';  
+         validFeedback[9].style.color = '#13e013'; 
+         
       }
       else{
         userBancaccount.classList.remove('is-valid')
           userBancaccount.classList.add('is-invalid');
        validFeedback[9].style.color = 'red';
-       validFeedback[9].innerHTML = 'Este Campo debe ser llenado'
+       validFeedback[9].innerHTML = 'Este Campo debe ser llenado';
+       validFeedback[9].style.display = 'block';
        userBancaccount.style.borderColor = 'red';
      
       }
@@ -238,38 +265,43 @@ $(function () {
         userDate.classList.add('is-valid');
          validFeedback[10].innerHTML = 'Looks good!';
          userDate.style.borderColor = '#13e013'
-         validFeedback[10].style.color = '#13e013';  
+         validFeedback[10].style.color = '#13e013'; 
+         
       }
       else{
         userDate.classList.remove('is-valid')
         userDate.classList.add('is-invalid');
        validFeedback[10].style.color = 'red';
        validFeedback[10].innerHTML = 'Este Campo debe ser llenado'
+       validFeedback[10].style.display = 'block'
        userDate.style.borderColor = 'red';
      
       }
     })
     
-    //userDate configuration
+    //userCedula configuration
     usercedula.addEventListener('blur',()=>{
       if(usercedula.value != "" ){
         usercedula.classList.remove('is-invalid')
         usercedula.classList.add('is-valid');
-         validFeedback[10].innerHTML = 'Looks good!';
+         validFeedback[11].innerHTML = 'Looks good!';
          usercedula.style.borderColor = '#13e013'
-         validFeedback[10].style.color = '#13e013';  
+         validFeedback[11].style.color = '#13e013'; 
+       
       }
       else{
         usercedula.classList.remove('is-valid')
         usercedula.classList.add('is-invalid');
-       validFeedback[10].style.color = 'red';
-       validFeedback[10].innerHTML = 'Este Campo debe ser llenado'
+       validFeedback[11].style.color = 'red';
+       validFeedback[11].textContent ='Este Campo debe ser llenado';
+       validFeedback[11].style.display = 'block'
        usercedula.style.borderColor = 'red';
      
       }
     })
-
+    
 
   // });//DOCUMENT CONTENT LOADED
+  
 }());
   
