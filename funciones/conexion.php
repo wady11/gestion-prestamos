@@ -1,6 +1,7 @@
 <?php
-    //mysql conection
-    $conn = new mysqli('localhost:3306', 'root', 'root', 'chasedba');
+    // nmysql conection
+    $conn = new mysqli('localhost', 'root', '', 'test');
+    // $conn = mysql_connect('localhost', 'root', '', 'test');
     
 
     //just in case of error
@@ -10,7 +11,7 @@
 
 
     //para saber si esta conectado a la base datos
-     // if($conn->ping()){
+    //  if($conn->ping()){
     //     echo 'conectado';                
     // }else{
     //     echo 'no conectado';
