@@ -44,6 +44,7 @@ $('.addbottom').tooltip();
   var userBancaccount = document.getElementById('bancAccount');
   var userDate = document.getElementById('date');
   var usercedula = document.getElementById('cedula');
+  var userDescripcion = document.getElementById('userdescripcion');
   
   //inputs array
   inputs.push(userName,userLastname,userEmail,userAddress,userTelephone,userCellphone,userCity,
@@ -76,6 +77,8 @@ $('.addbottom').tooltip();
           validFeedback[0].style.display = 'block'
         }
      })
+
+     
 
      //userlastname configuration
      userLastname.addEventListener('blur',()=>{
@@ -299,6 +302,8 @@ $('.addbottom').tooltip();
      
       }
     })
+
+    
     
 
   // });//DOCUMENT CONTENT LOADED
