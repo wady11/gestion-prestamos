@@ -78,7 +78,7 @@ doc.addEventListener('DOMContentLoaded',()=>{
                         ) 
                         //intervalor para que mande a la pagina principal
                        setTimeout(()=>{
-                            window.location.href = "http://localhost:83/Admin-LTE/dashboard.php"
+                            window.location.href = "/Admin-LTE/dashboard.php"
                        }, 1000)                      
                     }   
                     else if(resultado.respuesta == 'reject'){
@@ -111,7 +111,7 @@ doc.addEventListener('DOMContentLoaded',()=>{
                         ) 
                         //intervalor para que mande a la pagina principal
                        setTimeout(()=>{
-                            window.location.href = "http://localhost:83/Admin-LTE/dashboard.php"
+                            window.location.href = "/Admin-LTE/dashboard.php"
                        }, 1000)  
                     }
                     
@@ -141,7 +141,7 @@ doc.addEventListener('DOMContentLoaded',()=>{
                             'success'
                         )
                         setTimeout(()=>{
-                            location.href = "http://localhost:83/Admin-LTE/List-user.php";
+                            location.href = "/Admin-LTE/List-user.php";
                             this.reset();
                         },2000)
                       
