@@ -182,7 +182,7 @@ doc.addEventListener('DOMContentLoaded',()=>{
                             'success'
                         )
                         setTimeout(()=>{
-                            location.href = "http://localhost:83/Admin-LTE/List-user.php";
+                            location.href = "/Admin-LTE/List-user.php";
                             this.reset();
                         },2000)
                       

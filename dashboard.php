@@ -4,6 +4,7 @@ include_once("funciones/sesiones.php");
 include_once("templates/header.php");
 include_once("templates/header-bar-user.php");
 include_once("templates/navegation-User.php");
+include_once("funciones/conexion.php");
 
 ?>
 <!--
@@ -33,6 +34,24 @@ to get the desired effect
       </div><!-- /.container-fluid -->
     </div>
     <!-- /.content-header -->
+    <?php
+
+        //show client
+        try {
+          $sqlshow = 'SELECT  COUNT(*) as client FROM `user`';
+          $resultshow = $conn->query($sqlshow);
+          $showClient = $resultshow->fetch_assoc();
+        } catch (\Throwable $th) {
+          $error = $th->message();
+          echo $error;
+        }
+        
+      //  echo '<pre>';
+      //   var_dump($showClient);
+      //   echo '</pre>';
+    
+    
+    ?>
 
     <!-- Main content -->
     <section class="content">
@@ -59,14 +78,14 @@ to get the desired effect
             <!-- small box -->
             <div class="small-box bg-success">
               <div class="inner">
-                <h3>50</h3>
+                <h3><?php echo $showClient['client'] ?></h3>
 
                 <p>Clientes</p>
               </div>
               <div class="icon">
                  <img src="img/clients.ico" class="icon-img" alt="clientes">
               </div>
-              <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+              <a href="List-user.php" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
             </div>
           </div>
           <!-- ./col -->
