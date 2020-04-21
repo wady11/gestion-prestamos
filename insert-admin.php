@@ -246,6 +246,13 @@ if(isset($_POST['edit'])){
 }//edit-user
 
 
+if (isset($_POST['add-prestamo'])) {
+
+    echo '<pre>';
+    var_dump($_POST);
+    echo '</pre>';
+}
+
 
 
 

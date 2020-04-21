@@ -29,7 +29,7 @@
                     <h3 class="card-title"></h3>
 
                     <!-- form start -->
-                    <form role="form" name="create-user" id="create-user" method="post" action="insert-admin.php">
+                    <form role="form" method="post" action="insert-admin.php">
                         <div class="card-body">
                             <div class="form-group">
                                 <label class="col-sm-2 control-label">
@@ -41,8 +41,6 @@
                                     <span id="sp-customer" style="display: none">
                                       <span><a href="javascript:void(0)" title="Remove Customer" class="btn-remove-row"><i class="fa fa-times"></i></a></span>
                                     </span>
-                                    <input type="hidden" id="" name="" value="">
-
                                 </div>
                             </div>
                             <div class="hr-line-dashed"></div>
@@ -51,7 +49,7 @@
                                     <label for="" class="wide required" aria-required="true">Cuenta:</label>
                                 </label>
                                 <div class="col-sm-10">
-                                    <input type="text" name="" value="" id="" class="form-control" style="display:" autocomplete="off">
+                                    <input type="text" placeholder="#" name="" value="" id="" class="form-control" style="display:" autocomplete="off">
                                 </div>
                             </div>
                             <div class="hr-line-dashed"></div>
@@ -77,8 +75,7 @@
                                     <label for="garante" class="wide required" aria-required="true">Garante:</label>
                                 </label>
                                 <div class="col-sm-10">
-                                    <input type="text" name="" value="" id="" class="form-control" placeholder="Escribe el nombre aquí..." style="display:" autocomplete="off">
-                                    <input type="hidden" id="" name="garante">
+                                    <input type="text" name="garante" value="" id="" class="form-control" placeholder="Escribe el nombre aquí..." style="display:" autocomplete="off">
 
                                 </div>
                             </div>
@@ -88,71 +85,89 @@
                                     <label for="estadoprestamos" class="wide required" aria-required="true">Estado del Prestamo:</label>
                                 </label>
                                 <div class="col-sm-10">
-                                    <input type="text" name="" value="" id="" class="form-control" placeholder="Escribe el nombre aquí..." style="display:" autocomplete="off">
-                                    <input type="hidden" id="" name="estadoprestamo" value="">
+                                    <input type="text" name="estadoprestamo" value="Aprobado" id="" class="form-control" style="display:" autocomplete="off">
 
                                 </div>
                             </div>
                             <div class="inqbox-title-dahed"></div>
                             <div style="text-align: center">
-                            
-                             <h5>Información De Pago</h5>
-                              
-                             <div class="inqbox-title-dahed"></div>
-                            <div class="col-md-3 mb-3">
-                                <label for="monto">Monto</label>
-                                <input type="text" class="form-control" name="" id="">
-                                <input type="hidden" id="" name="monto" value="">
-                                <div class="valid-feedback">
-                                    <!-- Please provide a valid zip. -->
+
+                                <h5>Información De Pago</h5>
+
+                                <div class="inqbox-title-dahed"></div>
+                                <div class="col-md-3 mb-3">
+                                    <label for="monto">Monto</label>
+                                    <input type="text" class="form-control" name="" id="">
+                                    <div class="valid-feedback">
+                                        <!-- Please provide a valid zip. -->
+                                    </div>
+                                </div>
+                                <div class="input-group col-md-3 mb-3">
+                                    <label for="cellPhone"> tasa Interes</label>
+                                    <div class="input-group">
+                                        <input type="text" class="form-control">
+                                        <div class="input-group-append">
+                                            <span class="input-group-text"><i class="fas fa-percentage"></i></span>
+                                        </div>
+                                        <div class="valid-feedback">
+                                            <!-- Please provide a valid state. -->
+                                        </div>
+                                    </div>
+                                    <!-- /.input group -->
+                                </div>
+                                <div class="form-group">
+    <label class="col-sm-2 control-label">
+        Cuotas:
+    </label>
+    <div class="col-sm-2">
+        <input type="text" name="term" id="term" class="form-control" value="">
+    </div>
+    <div class="col-sm-2">
+        <select class="form-control valid" name="term_period" id="term_period" aria-invalid="false">
+            <option value="day">día</option>
+            <option value="week">Semanas</option>
+            <option value="month">Meses</option>
+            <option value="year">Años</option>
+        </select>
+    </div>
+</div>
+                                <div class="col-md-3 mb-3">
+                                    <label for="bancAccount">Cuenta de Banco</label>
+                                    <input type="text" class="form-control is-invalid" name="bancAccount" id="bancAccount" placeholder="Nº Cuenta">
+                                    <div class="valid-feedback">
+                                        <!-- Please provide a valid zip. -->
+                                    </div>
+                                </div>
+                                <div class="col-md-3 mb-3">
+                                    <label for="date">Fecha de Nacimineto</label>
+                                    <input type="date" class="form-control is-invalid" name="date" id="date" placeholder="dd/mm/yyyy">
+                                    <div class="valid-feedback">
+                                        <!-- Please provide a valid zip. -->
+                                    </div>
+                                </div>
+
+                                <div class="col-md-4 mb-3">
+                                    <label for="cedula">Cedula</label>
+                                    <input type="text" class="form-control is-valid" name="cedula" id="cedula" placeholder="Cedula">
+                                    <div class="valid-feedback">
+
+                                    </div>
                                 </div>
                             </div>
 
-                            <div class="input-group mb-3">
-                            <!-- <label for="bancAccount">Cuenta de Banco</label> -->
-                            <input type="text" class="form-control is-invalid">
-                            <div class="input-group-append">
-                                <span class="input-group-text"><i class="fas fa-check"></i></span>
-                            </div>
-                        </div>
-                            <div class="col-md-3 mb-3">
-                                <label for="bancAccount">Cuenta de Banco</label>
-                                <input type="text" class="form-control is-invalid" name="bancAccount" id="bancAccount" placeholder="Nº Cuenta">
-                                <div class="valid-feedback">
-                                    <!-- Please provide a valid zip. -->
-                                </div>
-                            </div>
-                            <div class="col-md-3 mb-3">
-                                <label for="date">Fecha de Nacimineto</label>
-                                <input type="date" class="form-control is-invalid" name="date" id="date" placeholder="dd/mm/yyyy">
-                                <div class="valid-feedback">
-                                    <!-- Please provide a valid zip. -->
-                                </div>
-                            </div>
-
-                            <div class="col-md-4 mb-3">
-                                <label for="cedula">Cedula</label>
-                                <input type="text" class="form-control is-valid" name="cedula" id="cedula" placeholder="Cedula">
-                                <div class="valid-feedback">
-
-                                </div>
-                            </div>
-                        </div>
-                      
-
-                        <input type="hidden" name="add-user" value="1">
-                        <button class="btn btn-primary" type="submit" title='agregar' id="agregarButtom">Agregar</button>
+                            <input type="hidden" name="add-prestamo" value="1">
+                            <button class="btn btn-primary" type="submit" title='agregar' id="agregarButtom">Agregar</button>
                     </form>
-                </div>
-                <!--fin del card-body-->
+                    </div>
+                    <!--fin del card-body-->
 
-            </div>
-            <!-- /.card -->
+                </div>
+                <!-- /.card -->
 
         </section>
         <!-- /.content -->
-    </div>
+        </div>
 
-    <?php 
-  include_once("templates/footer.php")
-?>
+        <?php 
+            include_once("templates/footer.php")
+        ?>

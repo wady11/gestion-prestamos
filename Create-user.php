@@ -82,13 +82,14 @@
                                         </div>
                                     </div>
                                     <!-- /.input group -->
-                                </div><div class=" col-md-3 mb-3">
+                                </div>
+                                <div class=" col-md-3 mb-3">
                                     <label for="cellPhone">Celular</label>
                                     <div class="input-group">
                                         <div class="input-group-prepend">
                                             <span class="input-group-text"><i class="fas fa-mobile-alt"></i></span>
                                         </div>
-                                        <!-- <input type="text" class="form-control is-invalid" name="telePhone" id="telePhone" placeholder="Telefono" > -->
+                                       
                                         <input type="text" class="form-control is-invalid" data-inputmask='"mask": "(999) 999-9999"' data-mask  name="cellPhone" id="cellPhone">
                                         <div class="valid-feedback">
                                             <!-- Please provide a valid state. -->
@@ -132,9 +133,9 @@
                                         <!-- Please provide a valid zip. -->
                                     </div>
                                 </div>
-                                <div class="col-md-4 mb-3">
+                                <div class="col-md-4 mb-3">     
                                     <label for="cedula">Cedula</label>
-                                    <input type="text" class="form-control is-valid" name="cedula" id="cedula" placeholder="Cedula">
+                                    <input type="text" class="form-control is-invalid" data-inputmask='"mask": "999-9999999-9"' data-mask name="cedula" id="cedula">
                                     <div class="valid-feedback">
 
                                     </div>
