@@ -289,6 +289,14 @@ img.bill {
     height: 1px;
     margin: 20px 0;
 }
+/****DASHED LINE***/
+.inqbox-title-dahed{
+    border-top: 1px solid #000000;
+    color: #ffffff;
+    background-color: #ffffff;
+    height: 1px;
+    margin: 20px 0;
+}
 
 /***MEDIA QUERY***/
 
