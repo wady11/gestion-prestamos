@@ -19,11 +19,17 @@ $(function () {
   });
 });
 
+
+
+//DATETIMEPICKER
+$('#fechaprestamo').datepicker();
+
 //JQUERY-UI
 $('#tooltiphome').tooltip();
 $('#tooltipcalcu').tooltip();
 $('.addbottom').tooltip();
 
+$('[data-mask]').inputmask()
 
 'use strict';
 

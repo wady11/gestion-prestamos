@@ -21,6 +21,8 @@
 <script src="js/bootstrap.bundle.min.js"></script>
 <!-- daterangepicker -->
 <script src="js/moment.min.js"></script>
+<!-- InputMask -->
+<script src="js/jquery.inputmask.bundle.js"></script>
 <!--Datatables-->
 <script src="js/datatable/jquery.dataTables.min.js"></script>
 <script src="js/dataTable/dataTables.responsive.min.js"></script>
