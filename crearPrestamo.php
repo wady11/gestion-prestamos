@@ -115,22 +115,24 @@
                                     </div>
                                     <!-- /.input group -->
                                 </div>
-                                <div class="form-group">
-    <label class="col-sm-2 control-label">
-        Cuotas:
-    </label>
-    <div class="col-sm-2">
-        <input type="text" name="term" id="term" class="form-control" value="">
-    </div>
-    <div class="col-sm-2">
-        <select class="form-control valid" name="term_period" id="term_period" aria-invalid="false">
-            <option value="day">día</option>
-            <option value="week">Semanas</option>
-            <option value="month">Meses</option>
-            <option value="year">Años</option>
-        </select>
-    </div>
-</div>
+                                <div class="form-row ">
+                                    <div class="form-group col-md-2">
+                                        <label for="inputEmail4">Cuotas</label>
+                                        <input type="text" name="term" id="term" class="form-control" value="">
+                                        
+                                    </div>
+                                    <div class=" col-md-2">
+                                    <label for="inputEmail4">periodo</label>
+                                        <select class="form-control valid" name="term_period" id="term_period" aria-invalid="false">
+                                            <option value="day">días</option>
+                                            <option value="week">Semanas</option>
+                                            <option value="month">Meses</option>
+                                            <option value="year">Años</option>
+                                        </select>
+                                    </div>
+                                  
+                                </div>
+
                                 <div class="col-md-3 mb-3">
                                     <label for="bancAccount">Cuenta de Banco</label>
                                     <input type="text" class="form-control is-invalid" name="bancAccount" id="bancAccount" placeholder="Nº Cuenta">
