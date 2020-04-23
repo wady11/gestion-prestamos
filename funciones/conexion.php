@@ -1,6 +1,6 @@
 <?php
     // nmysql conection
-    $conn = new mysqli('localhost', 'root', '', 'test');
+    $conn = new mysqli('localhost', 'root', 'root', 'chasedba');
     // $conn = mysql_connect('localhost', 'root', '', 'test');
     
 

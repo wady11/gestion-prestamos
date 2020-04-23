@@ -61,14 +61,7 @@
                                     <textarea name="description" cols="17" rows="5" id="" class="form-control" placeholder="Enter..."></textarea>
                                 </div>
                             </div>
-                            <div class="hr-line-dashed"></div>
-                            <div class="col-md-3 mb-3">
-                                <label for="telephone">Fecha de Inicio</label>
-                                <input type="text" class="form-control " name="telephone" id="fechaprestamo">
-                                <div class="valid-feedback">
-                                    <!-- Please provide a valid state. -->
-                                </div>
-                            </div>
+                           
                             <div class="hr-line-dashed"></div>
                             <div class="form-group">
                                 <label class="col-sm-2 control-label">
@@ -132,27 +125,18 @@
                                     </div>
                                   
                                 </div>
-
-                                <div class="col-md-3 mb-3">
-                                    <label for="bancAccount">Cuenta de Banco</label>
-                                    <input type="text" class="form-control is-invalid" name="bancAccount" id="bancAccount" placeholder="Nº Cuenta">
-                                    <div class="valid-feedback">
-                                        <!-- Please provide a valid zip. -->
-                                    </div>
+                            <div class="col-md-3 mb-3">
+                                <label for="telephone">Fecha de Inicio</label>
+                                <input type="text" class="form-control " name="telephone" id="fechaprestamo">
+                                <div class="valid-feedback">
+                                    <!-- Please provide a valid state. -->
                                 </div>
-                                <div class="col-md-3 mb-3">
-                                    <label for="date">Fecha de Nacimineto</label>
-                                    <input type="date" class="form-control is-invalid" name="date" id="date" placeholder="dd/mm/yyyy">
-                                    <div class="valid-feedback">
-                                        <!-- Please provide a valid zip. -->
-                                    </div>
-                                </div>
+                            </div>
 
                                 <div class="col-md-4 mb-3">
-                                    <label for="cedula">Cedula</label>
-                                    <input type="text" class="form-control is-valid" name="cedula" id="cedula" placeholder="Cedula">
+                                    <label for="">Monto del pago</label>
+                                    <input type="text" class="form-control " name="" id="" >
                                     <div class="valid-feedback">
-
                                     </div>
                                 </div>
                             </div>
