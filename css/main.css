@@ -151,7 +151,11 @@ p.information {
 .information-container {
     width: 23%;
 }
-
+/****CALCULADORA****/
+.form-row.col-md-5.mb-1 {
+    display: flex;
+    justify-content: center;
+}
 
 /***QUICK ACCESS***/
 

@@ -1,4 +1,4 @@
-<?php
+ <?php
 
 include_once("funciones/sesiones.php");
 include_once("templates/header.php");
@@ -51,19 +51,18 @@ to get the desired effect
                                     </div>
                                     <div class="calculator-container">
 
-                                        <label class="col-sm-2 control-label">
+                                        <label for="amount" class="col-sm-2 control-label">
                                             Monto de prestamo:
                                         </label>
                                         <div class="col-sm-2">
-                                            <input type="hidden" id="amount" name="amount" value="5446.50">
-                                            <input type="number" name="amount1" value="5446.50" id="amount1" class="form-control" step="any">
+                                            <input type="text" name="amount" value="" id="amount" class="form-control" step="any">
                                         </div>
-                                        <label class="col-sm-2 control-label">
+                                        <label for="interest" class="col-sm-2 control-label">
                                             Tasa de interés:
                                         </label>
                                         <div class="col-md-2 mb-3">
                                             <div class="input-group">
-                                                <input type="text" class="form-control" name="interest_rate" id="interest_rate" value="30">
+                                                <input type="text" class="form-control" name="interest" id="interest" value="">
                                                 <span class="input-group-text">%</span>
                                             </div>
                                         </div>
@@ -200,7 +199,7 @@ to get the desired effect
                                     </div> -->
                                 <!-- </div> -->
 
-                                <div class="row">
+                                <div class="row" style="margin-top:30px">
                                     <div class="col-12">
                                         <div class="card">
                                             <div class="card-header">
@@ -220,11 +219,11 @@ to get the desired effect
                                                             <table id="evento" class="table table-bordered table-striped dataTable dtr-inline" role="grid" aria-describedby="example1_info">
                                                                 <thead>
                                                                     <tr role="row">
-                                                                        <th class="sorting_asc" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" aria-sort="ascending" aria-label="Dias: activate to sort column descending">Dias</th>
-                                                                        <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" aria-label="Browser: activate to sort column ascending"></th>
-                                                                        <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" aria-label="Platform(s): activate to sort column ascending">Platform(s)</th>
-                                                                        <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" aria-label="Engine version: activate to sort column ascending">Engine version</th>
-                                                                        <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" aria-label="CSS grade: activate to sort column ascending" style="">CSS grade</th>
+                                                                        <th class="sorting_asc" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" aria-sort="ascending" aria-label="Dias: activate to sort column descending">Fecha</th>
+                                                                        <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" aria-label="Cuotas: activate to sort column ascending">Cuotas</th>
+                                                                        <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" aria-label="Capital: activate to sort column ascending">Capital</th>
+                                                                        <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" aria-label="Interes: activate to sort column ascending">Interes</th>
+                                                                        <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" aria-label="Saldo: activate to sort column ascending" style="">Saldo</th>
                                                                     </tr>
                                                                 </thead>
                                                                 <tbody>
@@ -261,11 +260,11 @@ to get the desired effect
                                                                 </tbody>
                                                                 <tfoot>
                                                                     <tr>
-                                                                        <th rowspan="1" colspan="1">Dias</th>
-                                                                        <th rowspan="1" colspan="1">Browser</th>
-                                                                        <th rowspan="1" colspan="1">Platform(s)</th>
-                                                                        <th rowspan="1" colspan="1">Engine version</th>
-                                                                        <th rowspan="1" colspan="1" style="">CSS grade</th>
+                                                                        <th rowspan="1" colspan="1">Fecha</th>
+                                                                        <th rowspan="1" colspan="1">Cuotas</th>
+                                                                        <th rowspan="1" colspan="1">Capital</th>
+                                                                        <th rowspan="1" colspan="1">Interes</th>
+                                                                        <th rowspan="1" colspan="1" style="">Saldo</th>
                                                                     </tr>
                                                                 </tfoot>
                                                             </table>
