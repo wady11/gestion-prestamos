@@ -38,8 +38,9 @@
 <script src="js/function/admin-ajax.js"></script>
 <!--App-->
 <script src="js/app.js"></script>
-<!-- dashboard-->
+<!--Calculadora amortizacion-->
 <script src="js/function/calculadora.js"></script> 
+
 
 </body>
 
