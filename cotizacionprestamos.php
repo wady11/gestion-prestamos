@@ -89,7 +89,7 @@ to get the desired effect
                                         <div class="col-sm-2">
                                             <div class="input-group date">
                                                 <span class="input-group-addon"><i class="fa fa-calendar"></i></span>
-                                                <input type="text" class="form-control"  id="start_date" >
+                                                <input type="date" class="form-control"  id="start_date" >
                                             </div>
                                         </div>
 
