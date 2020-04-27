@@ -53,7 +53,7 @@ to get the desired effect
                                         <label class="col-sm-2 control-label">
                                             Monto de prestamo:
                                         </label>
-                                        <div class="col-sm-2">
+                                        <div class="col-sm-3">
                                             <input type="text"   id="amount" class="form-control" step="any">
                                         </div>
                                         <label  class="col-sm-2 control-label">
@@ -81,7 +81,7 @@ to get the desired effect
                                         <label class="col-sm-2 control-label">
                                             Fecha de inicio:
                                         </label>
-                                        <div class="col-sm-2">
+                                        <div class="col-sm-3">
                                             <div class="input-group date">
                                                 <span class="input-group-addon"><i class="fa fa-calendar"></i></span>
                                                 <input type="date" class="form-control"  id="start_date" >
@@ -108,55 +108,72 @@ to get the desired effect
 
                                 <div class="row" style="margin-top:30px">
                                     <div class="col-12">
-                                        <div class="card">
-                                            <div class="card-header">
-                                                <h3 class="card-title">DataTable with default features</h3>
-                                            </div>
-                                            <!-- /.card-header -->
-                                            <div class="card-body">
-                                                <div id="example1_wrapper" class="dataTables_wrapper dt-bootstrap4">
-                                                    <div class="row">
-                                                        <div class="col-sm-12 col-md-6">
-                                                            
-                                                        </div>
-                                                        
-                                                    </div>
-                                                    <div class="row">
-                                                        <div class="col-sm-12">
-                                                            <table id="evento" class="table table-bordered table-striped dataTable dtr-inline" role="grid" aria-describedby="example1_info">
-                                                                <thead>
-                                                                    <tr role="row">
-                                                                    <th class="sorting_asc" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" aria-sort="ascending" aria-label="Periodo: activate to sort column descending">Perido</th>
-                                                                        <th class="sorting_asc" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" aria-label="Dias: activate to sort column descending">Fecha</th>
-                                                                        <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" aria-label="Cuotas: activate to sort column ascending">Cuotas</th>
-                                                                        <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" aria-label="Capital: activate to sort column ascending">Capital</th>
-                                                                        <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" aria-label="Interes: activate to sort column ascending">Interes</th>
-                                                                        <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" aria-label="Saldo: activate to sort column ascending" style="">Saldo</th>
-                                                                    </tr>
-                                                                </thead>
-                                                                <tbody>
-
-                                                    
-                                                                   
-                                                                </tbody>
-                                                                <tfoot>
-                                                                    <tr>
-                                                                        <th rowspan="1" colspan="1">Perido</th>
-                                                                        <th rowspan="1" colspan="1">Fecha</th>
-                                                                        <th rowspan="1" colspan="1">Cuotas</th>
-                                                                        <th rowspan="1" colspan="1">Capital</th>
-                                                                        <th rowspan="1" colspan="1">Interes</th>
-                                                                        <th rowspan="1" colspan="1" style="">Saldo</th>
-                                                                    </tr>
-                                                                </tfoot>
-                                                            </table>
-                                                        </div>
-                                                    </div>
-                                                    
-                                            </div>
-                                            <!-- /.card-body -->
-                                        </div>
-                                        <!-- /.card -->
+                                    <div class="card">
+            <div class="card-header">
+              <h3 class="card-title">DataTable with default features</h3>
+            </div>
+            <!-- /.card-header -->
+            <div class="card-body">
+              <table id="evento" class="table table-bordered table-striped">
+                <thead>
+                <tr>
+                  <th>Periodo</th>
+                  <th>Fecha</th>
+                  <th>Cuota</th>
+                  <th>Capital</th>
+                  <th>Interes</th>
+                  <th>Saldo</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                  <td>Trident</td>
+                  <td>Internet
+                    Explorer 4.0
+                  </td>
+                  <td>Win 95+</td>
+                  <td> 4</td>
+                  <td>X</td>
+                  <td>hola</td>
+                </tr>
+                <tr>
+                  <td>Trident</td>
+                  <td>Internet
+                    Explorer 5.0
+                  </td>
+                  <td>Win 95+</td>
+                  <td>5</td>
+                  <td>C</td>
+                  <td>hola</td>
+                </tr>
+                <tr>
+                  <td>Trident</td>
+                  <td>Internet
+                    Explorer 5.5
+                  </td>
+                  <td>Win 95+</td>
+                  <td>5.5</td>
+                  <td>A</td>
+                  <td>hola</td>
+                </tr>
+                
+                
+                </tbody>
+                <tfoot>
+                <tr>
+                  <th>Periodo</th>
+                  <th>Fecha</th>
+                  <th>Cuota</th>
+                  <th>Capital</th>
+                  <th>Interes</th>
+                  <th>Saldo</th>
+                </tr>
+                </tfoot>
+              </table>
+            </div>
+            <!-- /.card-body -->
+          </div>
+          <!-- /.card -->
                                     </div>
                                     <!-- /.col -->
                                 </div>

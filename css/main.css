@@ -302,6 +302,10 @@ img.bill {
     margin: 20px 0;
 }
 
+/***DATATABLE***/
+.dataTables_empty {
+    display: none;
+}
 /***MEDIA QUERY***/
 
 @media only screen and (max-width: 320px) {

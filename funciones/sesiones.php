@@ -3,7 +3,7 @@
 
     function Verificacion_Usuario(){
         if(!User_autentic()){
-            header('Location: http://localhost:83/Admin-LTE/login.php');
+            header('Location:/Admin-LTE/login.php');
             exit;
         }
     }

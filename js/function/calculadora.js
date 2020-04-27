@@ -46,8 +46,7 @@ window.addEventListener('load',()=>{
                     let totalPay = Number.parseFloat(moneyAmount-paymoney);
                     date[index] = momentDate.format('DD-MM-YYYY');
                     momentDate.add(1, 'month');
-                    
-                    // row.push(index,coutValor,paymoney,totalPay,date[index]);
+
                     row = {
                     coutPerido : index,
                     cuota : coutValor,
@@ -69,19 +68,22 @@ window.addEventListener('load',()=>{
 
              let generateCard = (info)=>{
                         let  row = `
-                        <tr role="row" class="odd">
-                            <td >${info.coutPerido}</td>
-                            <td >${info.datei}</td>
-                            <td>${info.cuota.toFixed(2)}</td>
-                            <td>${info.money.toFixed(2)}</td>
-                            <td>${info.pay}</td>
-                            <td>${info.total.toFixed(2)}</td>
-                        </tr>`;
+                        <tr>
+                            <td>Trident</td>
+                            <td>Internet
+                            Explorer 4.0
+                            </td>
+                            <td>Win 95+</td>
+                            <td> 4</td>
+                            <td>X</td>
+                            <td>hola</td>
+                      </tr>
+                       `;
                         
                     console.log(info)
                         return row
                     
-                
+                        // <td class="sorting_1" tabindex="0">22009.17</td>
              }
              
 

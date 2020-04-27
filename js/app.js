@@ -8,6 +8,7 @@ $(function () {
     "autoWidth": false,
     "responsive": true
   });
+
   $("#evento").DataTable({
     "paging": true,
     "lengthChange": true,
@@ -17,6 +18,7 @@ $(function () {
     "autoWidth": false,
     "responsive": true
   });
+  
 });
 
 
