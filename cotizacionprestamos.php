@@ -74,12 +74,7 @@ to get the desired effect
                                     </div>
                                     <div class=" col-md-5">
                                     <label >periodo</label>
-                                        <select class="form-control valid"  id="term_period" aria-invalid="false">
-                                            <option value="day">días</option>
-                                            <option value="week">Semanas</option>
-                                            <option value="month">Meses</option>
-                                            <option value="year">Años</option>
-                                        </select>
+                                        <input type="text" name="" value="Meses" id="term_period" class="form-control" disabled = "disabled">
                                     </div>
                                   
                                 </div>
@@ -131,7 +126,8 @@ to get the desired effect
                                                             <table id="evento" class="table table-bordered table-striped dataTable dtr-inline" role="grid" aria-describedby="example1_info">
                                                                 <thead>
                                                                     <tr role="row">
-                                                                        <th class="sorting_asc" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" aria-sort="ascending" aria-label="Dias: activate to sort column descending">Fecha</th>
+                                                                    <th class="sorting_asc" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" aria-sort="ascending" aria-label="Periodo: activate to sort column descending">Perido</th>
+                                                                        <th class="sorting_asc" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" aria-label="Dias: activate to sort column descending">Fecha</th>
                                                                         <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" aria-label="Cuotas: activate to sort column ascending">Cuotas</th>
                                                                         <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" aria-label="Capital: activate to sort column ascending">Capital</th>
                                                                         <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" aria-label="Interes: activate to sort column ascending">Interes</th>
@@ -140,25 +136,12 @@ to get the desired effect
                                                                 </thead>
                                                                 <tbody>
 
-                                                                    <tr role="row" class="odd">
-                                                                        <td tabindex="0" class="sorting_1" style=""></td>
-                                                                        <td></td>
-                                                                        <td></td>
-                                                                        <td></td>
-                                                                        <td style=""></td>
-                                                                    </tr>
-                                                                    <tr role="row" class="even">
-                                                                        <td tabindex="0" class="sorting_1"></td>
-                                                                        <td></td>
-                                                                        <td></td>
-                                                                        <td></td>
-                                                                        <td style=""></td>
-                                                                    </tr>
-                                                                    
+                                                    
                                                                    
                                                                 </tbody>
                                                                 <tfoot>
                                                                     <tr>
+                                                                        <th rowspan="1" colspan="1">Perido</th>
                                                                         <th rowspan="1" colspan="1">Fecha</th>
                                                                         <th rowspan="1" colspan="1">Cuotas</th>
                                                                         <th rowspan="1" colspan="1">Capital</th>
