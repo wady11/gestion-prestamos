@@ -77,7 +77,7 @@ window.addEventListener('load',()=>{
                             <td> 4</td>
                             <td>X</td>
                             <td>hola</td>
-                      </tr>
+                         </tr>
                        `;
                         
                     console.log(info)
