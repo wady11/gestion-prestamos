@@ -88,10 +88,10 @@ to get the desired effect
                                             </div>
                                         </div>
 
-                                        <label class="col-sm-2 control-label" style="margin-top:20px">
+                                        <label class="col-sm-3 mb-1 control-label" style="margin-top:20px;text-align: center">
                                             Monto del pago:
                                         </label>
-                                        <div class="col-sm-2">
+                                        <div class="col-sm-2 ">
                                             <div id="total-amount">0.00</div>
                                         </div>
 
@@ -110,7 +110,7 @@ to get the desired effect
                                     <div class="col-12">
                                     <div class="card">
             <div class="card-header">
-              <h3 class="card-title">DataTable with default features</h3>
+              <h3 class="card-title">Tabla de Amortizacion</h3>
             </div>
             <!-- /.card-header -->
             <div class="card-body">
@@ -126,36 +126,7 @@ to get the desired effect
                 </tr>
                 </thead>
                 <tbody>
-                <tr>
-                  <td>Trident</td>
-                  <td>Internet
-                    Explorer 4.0
-                  </td>
-                  <td>Win 95+</td>
-                  <td> 4</td>
-                  <td>X</td>
-                  <td>hola</td>
-                </tr>
-                <tr>
-                  <td>Trident</td>
-                  <td>Internet
-                    Explorer 5.0
-                  </td>
-                  <td>Win 95+</td>
-                  <td>5</td>
-                  <td>C</td>
-                  <td>hola</td>
-                </tr>
-                <tr>
-                  <td>Trident</td>
-                  <td>Internet
-                    Explorer 5.5
-                  </td>
-                  <td>Win 95+</td>
-                  <td>5.5</td>
-                  <td>A</td>
-                  <td>hola</td>
-                </tr>
+               
                 
                 
                 </tbody>

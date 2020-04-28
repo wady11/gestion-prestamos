@@ -10,11 +10,11 @@ $(function () {
   });
 
   $("#evento").DataTable({
-    "paging": true,
+    "paging": false,
     "lengthChange": true,
     "searching": false,
-    "ordering": true,
-    "info": true,
+    "ordering": false,
+    "info": false,
     "autoWidth": false,
     "responsive": true
   });
