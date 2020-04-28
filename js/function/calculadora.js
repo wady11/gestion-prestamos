@@ -25,15 +25,17 @@ window.addEventListener('load',()=>{
           }
 
           
-
+            //calculate cout
           const calculateCuot = (interest,frequencyValue,valor)=>{
                 //metodo frances
                 let cuot = valor * (Math.pow(1+interest/100,frequencyValue)*interest/100) / (Math.pow(1+interest/100, frequencyValue)-1);
                 return cuot;
           }
 
+            //appendt to table
           const insertTable = (time,moneyAmount,interestMoney,coutValor)=>{
-
+                let mount = moneyAmount;
+                let totalGanado = 0;
                 let row = {};
                 let a = currentDate.value
                 let momentDate = moment(a);
@@ -41,46 +43,44 @@ window.addEventListener('load',()=>{
                 
                 for (let index = 1; index <= time; index++) {
                     
-                    let payInterest = Number.parseFloat(moneyAmount * (interestMoney/100));
-                    let paymoney = coutValor - payInterest;
-                    let totalPay = Number.parseFloat(moneyAmount-paymoney);
+                    let payInterest = Number.parseFloat(mount * (interestMoney/100));
+                    let payCapital = coutValor - payInterest;
+                     mount= Number.parseFloat(mount-payCapital);
+                     totalGanado =totalGanado +coutValor
                     date[index] = momentDate.format('DD-MM-YYYY');
                     momentDate.add(1, 'month');
 
                     row = {
-                    coutPerido : index,
-                    cuota : coutValor,
-                    pay : payInterest,
-                    money : paymoney,
-                    total : totalPay,
-                    datei : date[index]
+                        coutPerido : index,
+                        cuota : coutValor,
+                        pay : payInterest,
+                        money : payCapital,
+                        total : mount,
+                        datei : date[index]
                     }
 
                     let card =  generateCard(row);    
                     $('#evento tbody').append(card);
-                } 
-
-                return row;
-
+                    
                 
-
+                } 
+                $('#total-amount').replaceWith(totalGanado.toFixed(2));
+                return row;
+               
              }
 
+                //generate card
              let generateCard = (info)=>{
                         let  row = `
                         <tr>
-                            <td>Trident</td>
-                            <td>Internet
-                            Explorer 4.0
-                            </td>
-                            <td>Win 95+</td>
-                            <td> 4</td>
-                            <td>X</td>
-                            <td>hola</td>
-                         </tr>
+                            <td>${info.coutPerido}</td>
+                            <td>${info.datei}</td>
+                            <td>${info.cuota.toFixed(2)}</td>
+                            <td>${info.money.toFixed(2)}</td>
+                            <td>${info.pay.toFixed(2)}</td>
+                            <td>${info.total.toFixed(2)}</td>
+                      </tr>
                        `;
-                        
-                    console.log(info)
                         return row
                     
                         // <td class="sorting_1" tabindex="0">22009.17</td>
@@ -102,12 +102,10 @@ window.addEventListener('load',()=>{
             //interest
             let coutValor = calculateCuot(mainInterest,mainCouts,mainAmount)
 
-            console.log(coutValor);
-
              //insert into table
             let tableValor = insertTable(mainCouts,mainAmount,mainInterest,coutValor);
 
-            console.log(tableValor);
+            console.log(tableValor.couta);
 
             // generateCard();
 
