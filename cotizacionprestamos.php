@@ -1,4 +1,4 @@
- <?php
+<?php
 
 include_once("funciones/sesiones.php");
 include_once("templates/header.php");
@@ -23,20 +23,24 @@ to get the desired effect
             <div class="content-wrapper">
                 <!-- Content Header (Page header) -->
                 <div class="content-header">
-      <div class="container-fluid">
-        <div class="row mb-2">
-          <div class="col-sm-6">
-            <h1 class="m-0 text-dark">Calculadora de prestamos</h1>
-          </div><!-- /.col -->
-          <div class="col-sm-6">
-            <ol class="breadcrumb float-sm-right">
-              <li class="breadcrumb-item"><a href="crearPrestamo.php">Crear Prestamo nuevo</a></li>
-            </ol>
-          </div><!-- /.col -->
-        </div><!-- /.row -->
-      </div><!-- /.container-fluid -->
-    </div>
-    <!-- /.content-header -->
+                    <div class="container-fluid">
+                        <div class="row mb-2">
+                            <div class="col-sm-6">
+                                <h1 class="m-0 text-dark">Calculadora de prestamos</h1>
+                            </div>
+                            <!-- /.col -->
+                            <div class="col-sm-6">
+                                <ol class="breadcrumb float-sm-right">
+                                    <li class="breadcrumb-item"><a href="crearPrestamo.php">Crear Prestamo nuevo</a></li>
+                                </ol>
+                            </div>
+                            <!-- /.col -->
+                        </div>
+                        <!-- /.row -->
+                    </div>
+                    <!-- /.container-fluid -->
+                </div>
+                <!-- /.content-header -->
 
                 <!-- Main content -->
                 <section class="content">
@@ -54,37 +58,37 @@ to get the desired effect
                                             Monto de prestamo:
                                         </label>
                                         <div class="col-sm-3">
-                                            <input type="text"   id="amount" class="form-control" step="any">
+                                            <input type="text" id="amount" class="form-control" step="any">
                                         </div>
-                                        <label  class="col-sm-2 control-label">
+                                        <label class="col-sm-2 control-label">
                                             Tasa de interés:
                                         </label>
                                         <div class="col-md-2 mb-3">
                                             <div class="input-group">
-                                                <input type="text" class="form-control" id="interest" >
+                                                <input type="text" class="form-control" id="interest">
                                                 <span class="input-group-text">%</span>
                                             </div>
                                         </div>
                                         <div class="input-container"></div>
-                                         <div class="form-row col-md-5 mb-1 ">
-                                    <div class="form-group col-md-4">
-                                        <label>Cantidad Meses</label>
-                                        <input type="text"  id="term" class="form-control" >
-                                        
-                                    </div>
-                                    <div class=" col-md-5">
-                                    <label >periodo</label>
-                                        <input type="text" name="" value="Meses" id="term_period" class="form-control" disabled = "disabled">
-                                    </div>
-                                  
-                                </div>
+                                        <div class="form-row col-md-5 mb-1 ">
+                                            <div class="form-group col-md-4">
+                                                <label>Cantidad Meses</label>
+                                                <input type="text" id="term" class="form-control">
+
+                                            </div>
+                                            <div class=" col-md-5">
+                                                <label>periodo</label>
+                                                <input type="text" name="" value="Meses" id="term_period" class="form-control" disabled="disabled">
+                                            </div>
+
+                                        </div>
                                         <label class="col-sm-2 control-label">
                                             Fecha de inicio:
                                         </label>
                                         <div class="col-sm-3">
                                             <div class="input-group date">
                                                 <span class="input-group-addon"><i class="fa fa-calendar"></i></span>
-                                                <input type="date" class="form-control"  id="start_date" >
+                                                <input type="date" class="form-control" id="start_date">
                                             </div>
                                         </div>
 
@@ -109,62 +113,83 @@ to get the desired effect
 
                                     </div>
 
-                                <div class="row" style="margin-top:30px">
-                                    <div class="col-12">
-                                    <div class="card">
-            <div class="card-header">
-              <h3 class="card-title">Tabla de Amortizacion</h3>
-            </div>
-            <!-- /.card-header -->
-            <div class="card-body">
-              <table id="evento" class="table table-bordered table-striped">
-                <thead>
-                <tr>
-                  <th>Periodo</th>
-                  <th>Fecha</th>
-                  <th>Cuota</th>
-                  <th>Capital</th>
-                  <th>Interes</th>
-                  <th>Saldo</th>
-                </tr>
-                </thead>
-                <tbody>
-               
-                
-                
-                </tbody>
-                <tfoot>
-                <tr>
-                  <th>Periodo</th>
-                  <th>Fecha</th>
-                  <th>Cuota</th>
-                  <th>Capital</th>
-                  <th>Interes</th>
-                  <th>Saldo</th>
-                </tr>
-                </tfoot>
-              </table>
-            </div>
-            <!-- /.card-body -->
-          </div>
-          <!-- /.card -->
+                                    <div class="row" style="margin-top:30px">
+                                        <div class="col-12">
+                                            <div class="card">
+                                                <div class="card-header">
+                                                    <h3 class="card-title">Tabla de Amortizacion</h3>
+                                                </div>
+                                                <!-- /.card-header -->
+                                                <div class="card-body">
+                                                    <div class="container-amortizacion">
+                                                        <div class="fecha-prestamos">
+                                                            <label>Fecha del prestamo:</label>
+                                                            <div id="fechaAmortizacion">00.00 </div>
+                                                        </div>
+                                                        <div class="monto-prestamos">
+                                                            <label>Monto:</label>
+                                                            <div id="montoAmortizacion">00.00 </div>
+                                                        </div>
+                                                        <div class="periodo-prestamos">
+                                                            <label>Periodo:</label>
+                                                            <div id="periodoAmortizacion">00.00 </div>
+                                                        </div>
+                                                        <div class="interes-prestamos">
+                                                            <label>Periodo:</label>
+                                                            <div id="interesAmortizacion">00.00 </div>
+                                                        </div>
+                                                        <div class="plazo-prestamos">
+                                                            <label>Periodo:</label>
+                                                            <div id="plazoAmortizacion">00.00 </div>
+                                                        </div>
+
+                                                    </div>
+                                                    <table id="evento" class="table table-bordered table-striped">
+                                                        <thead>
+                                                            <tr>
+                                                                <th>Periodo</th>
+                                                                <th>Fecha</th>
+                                                                <th>Cuota</th>
+                                                                <th>Capital</th>
+                                                                <th>Interes</th>
+                                                                <th>Saldo</th>
+                                                            </tr>
+                                                        </thead>
+                                                        <tbody>
+
+                                                        </tbody>
+                                                        <tfoot>
+                                                            <tr>
+                                                                <th>Periodo</th>
+                                                                <th>Fecha</th>
+                                                                <th>Cuota</th>
+                                                                <th>Capital</th>
+                                                                <th>Interes</th>
+                                                                <th>Saldo</th>
+                                                            </tr>
+                                                        </tfoot>
+                                                    </table>
+                                                </div>
+                                                <!-- /.card-body -->
+                                            </div>
+                                            <!-- /.card -->
+                                        </div>
+                                        <!-- /.col -->
                                     </div>
-                                    <!-- /.col -->
+                                    <!-- /.row -->
+
                                 </div>
-                                <!-- /.row -->
-
+                                <!--tab-container-->
                             </div>
-                            <!--tab-container-->
                         </div>
-                    </div>
-                    <!-- Main row -->
+                        <!-- Main row -->
 
-                    <!-- /.row (main row) -->
+                        <!-- /.row (main row) -->
+                    </div>
+                    <!-- /.container-fluid -->
+                </section>
+                <!-- /.content -->
             </div>
-            <!-- /.container-fluid -->
-            </section>
-            <!-- /.content -->
-        </div>
-        <?php
+            <?php
                  include_once("templates/footer.php")
 ?>

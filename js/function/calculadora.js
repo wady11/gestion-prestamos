@@ -4,7 +4,7 @@
  let interes = document.getElementById('interest');
  let cuotas = document.getElementById('term');
  let currentDate = document.getElementById('start_date');
-//  const table = document.querySelector('#evento tbody')
+
 
  let date =[];
  
@@ -14,14 +14,9 @@ window.addEventListener('load',()=>{
 
     //empty date
        const fecha_vacia = ()=>{
-            if ($("#start_date").val() == '') {
-                Swal.fire(
-                     'Oops...',
-                    'Por favor instroduzca la fecha de inicio',
-                    'error'
-                  )
-                
-              }
+            let boolanValor = false;
+            if ($("#start_date").val() == '') {boolanValor = true;}
+              return boolanValor;
           }
 
           
@@ -42,13 +37,14 @@ window.addEventListener('load',()=>{
                 momentDate.add(1, 'month');
                 
                 for (let index = 1; index <= time; index++) {
-                    
+
                     let payInterest = Number.parseFloat(mount * (interestMoney/100));
                     let payCapital = coutValor - payInterest;
+
                      mount= Number.parseFloat(mount-payCapital);
                      totalGanado =totalGanado +coutValor
-                    date[index] = momentDate.format('DD-MM-YYYY');
-                    momentDate.add(1, 'month');
+                      date[index] = momentDate.format('DD-MM-YYYY');
+                      momentDate.add(1, 'month');
 
                     row = {
                         coutPerido : index,
@@ -64,7 +60,8 @@ window.addEventListener('load',()=>{
                     
                 
                 } 
-                $('#total-amount').replaceWith(totalGanado.toFixed(2));
+                    //append
+                  $('#total-amount').replaceWith(totalGanado.toFixed(2));
                 return row;
                
              }
@@ -90,24 +87,32 @@ window.addEventListener('load',()=>{
 
         //click event buttom
        $('#btn-calculator').click(function () { 
-                //variable
-            const mainAmount = Number.parseFloat(amount.value);
-            const mainInterest = Number.parseFloat(interes.value);
-            const mainCouts = Number.parseFloat(cuotas.value);
-            
 
             //empty date 
-            fecha_vacia();
+            let emptyDate =   fecha_vacia();
 
-            //interest
-            let coutValor = calculateCuot(mainInterest,mainCouts,mainAmount)
+              if(emptyDate == true){
+                    Swal.fire(
+                      'Oops...',
+                    'Por favor instroduzca la fecha de inicio',
+                    'error'
+                    )
+              }else{
+                     //variable
+                  const mainAmount = Number.parseFloat(amount.value);
+                  const mainInterest = Number.parseFloat(interes.value);
+                  const mainCouts = Number.parseFloat(cuotas.value);
+                  
+                  //interest
+                  let coutValor = calculateCuot(mainInterest,mainCouts,mainAmount)
 
-             //insert into table
-            let tableValor = insertTable(mainCouts,mainAmount,mainInterest,coutValor);
+                  //insert into table
+                  let tableValor = insertTable(mainCouts,mainAmount,mainInterest,coutValor);
 
-            console.log(tableValor.couta);
+              }
 
-            // generateCard();
+
+             
 
           
       
