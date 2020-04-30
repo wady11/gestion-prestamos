@@ -294,6 +294,11 @@ img.bill {
     justify-content: space-between;
 }
 
+.totalValor{
+    display: flex;
+    justify-content: center;
+}
+
 /***CREAR PRESTAMO**/
 .hr-line-dashed {
     border-top: 1px dashed #e7eaec;

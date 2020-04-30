@@ -4,7 +4,7 @@
  let interes = document.getElementById('interest');
  let cuotas = document.getElementById('term');
  let currentDate = document.getElementById('start_date');
-
+ let totalRecaudado = document.getElementById('total-amount');
 
  let date =[];
  
@@ -61,7 +61,8 @@ window.addEventListener('load',()=>{
                 
                 } 
                     //append
-                  $('#total-amount').replaceWith(totalGanado.toFixed(2));
+                  $('#total-amount').val(totalGanado.toFixed(2));
+
                 return row;
                
              }
@@ -82,7 +83,22 @@ window.addEventListener('load',()=>{
                     
                         // <td class="sorting_1" tabindex="0">22009.17</td>
              }
-             
+
+
+              //Clean buttom 
+            let buttonCLean = document.getElementById('clean').addEventListener('click',()=>{
+                    
+                  if(fecha_vacia()== false ){
+                      amount.value = "";
+                      interes.value = "";
+                      cuotas.value = "";
+                      currentDate.value = "";
+                      totalRecaudado.value = '';
+                      
+
+                  }
+
+            });
 
 
         //click event buttom
@@ -90,6 +106,8 @@ window.addEventListener('load',()=>{
 
             //empty date 
             let emptyDate =   fecha_vacia();
+              //buttom borrar
+              buttonCLean;
 
               if(emptyDate == true){
                     Swal.fire(
@@ -107,17 +125,16 @@ window.addEventListener('load',()=>{
                   let coutValor = calculateCuot(mainInterest,mainCouts,mainAmount)
 
                   //insert into table
-                  let tableValor = insertTable(mainCouts,mainAmount,mainInterest,coutValor);
+                   insertTable(mainCouts,mainAmount,mainInterest,coutValor);
 
               }
-
-
-             
-
-          
-      
            
        });
+
+
+       
+
+   
          
 
 })//DOCUMENT READY FUNCTION
