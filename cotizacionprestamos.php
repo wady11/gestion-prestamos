@@ -95,8 +95,8 @@ to get the desired effect
                                         <label class="col-sm-3 mb-1 control-label" style="margin-top:20px;text-align: center">
                                             Monto del pago:
                                         </label>
-                                        <div class="col-sm-2 ">
-                                            <div id="total-amount">0.00</div>
+                                        <div class="col-sm-5 totalValor">
+                                            <input type="text" id="total-amount" class="col-sm-5" disabled="disabled" style="">
                                         </div>
 
                                         <label class="col-sm-2 control-label">
@@ -135,11 +135,11 @@ to get the desired effect
                                                             <div id="periodoAmortizacion">00.00 </div>
                                                         </div>
                                                         <div class="interes-prestamos">
-                                                            <label>Periodo:</label>
+                                                            <label>Interes:</label>
                                                             <div id="interesAmortizacion">00.00 </div>
                                                         </div>
                                                         <div class="plazo-prestamos">
-                                                            <label>Periodo:</label>
+                                                            <label>Plazo:</label>
                                                             <div id="plazoAmortizacion">00.00 </div>
                                                         </div>
 
