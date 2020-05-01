@@ -155,7 +155,7 @@ to get the desired effect
                                                                 <th>Saldo</th>
                                                             </tr>
                                                         </thead>
-                                                        <tbody>
+                                                        <tbody id="tBody">
 
                                                         </tbody>
                                                         <tfoot>

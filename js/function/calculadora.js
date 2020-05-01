@@ -1,75 +1,76 @@
 'use strict';
-     
- let amount =  document.getElementById('amount');
- let interes = document.getElementById('interest');
- let cuotas = document.getElementById('term');
- let currentDate = document.getElementById('start_date');
- let totalRecaudado = document.getElementById('total-amount');
 
- let date =[];
- 
+let amount = document.getElementById('amount');
+let interes = document.getElementById('interest');
+let cuotas = document.getElementById('term');
+let currentDate = document.getElementById('start_date');
+let totalRecaudado = document.getElementById('total-amount');
+let tableDiv = document.getElementById('tBody')
 
- //ADDEVENTLISTENER
-window.addEventListener('load',()=>{
+let date = [];
 
-    //empty date
-       const fecha_vacia = ()=>{
+//ADDEVENTLISTENER
+window.addEventListener('load', () => {
+
+        //empty date
+        const fecha_vacia = () => {
             let boolanValor = false;
-            if ($("#start_date").val() == '') {boolanValor = true;}
-              return boolanValor;
-          }
+            if ($("#start_date").val() == '') {
+                boolanValor = true;
+            }
+            return boolanValor;
+        }
 
-          
-            //calculate cout
-          const calculateCuot = (interest,frequencyValue,valor)=>{
-                //metodo frances
-                let cuot = valor * (Math.pow(1+interest/100,frequencyValue)*interest/100) / (Math.pow(1+interest/100, frequencyValue)-1);
-                return cuot;
-          }
+        //calculate cout
+        const calculateCuot = (interest, frequencyValue, valor) => {
+            //metodo frances
+            let cuot = valor * (Math.pow(1 + interest / 100, frequencyValue) * interest / 100) / (Math.pow(1 + interest / 100, frequencyValue) - 1);
+            return cuot;
+        }
 
-            //appendt to table
-          const insertTable = (time,moneyAmount,interestMoney,coutValor)=>{
-                let mount = moneyAmount;
-                let totalGanado = 0;
-                let row = {};
-                let a = currentDate.value
-                let momentDate = moment(a);
+        //appendt to table
+        const insertTable = (time, moneyAmount, interestMoney, coutValor) => {
+            let mount = moneyAmount;
+            let totalGanado = 0;
+            let row = {};
+            let a = currentDate.value
+            let momentDate = moment(a);
+            momentDate.add(1, 'month');
+
+            for (let index = 1; index <= time; index++) {
+
+                let payInterest = Number.parseFloat(mount * (interestMoney / 100));
+                let payCapital = coutValor - payInterest;
+
+                mount = Number.parseFloat(mount - payCapital);
+                totalGanado = totalGanado + coutValor
+                date[index] = momentDate.format('DD-MM-YYYY');
                 momentDate.add(1, 'month');
+
+                row = {
+                    coutPerido: index,
+                    cuota: coutValor,
+                    pay: payInterest,
+                    money: payCapital,
+                    total: mount,
+                    datei: date[index]
+                }
+
+                let card = generateCard(row);
                 
-                for (let index = 1; index <= time; index++) {
+                $('#evento tbody').append(card);
 
-                    let payInterest = Number.parseFloat(mount * (interestMoney/100));
-                    let payCapital = coutValor - payInterest;
+            }
+            //append
+            $('#total-amount').val(totalGanado.toFixed(2));
 
-                     mount= Number.parseFloat(mount-payCapital);
-                     totalGanado =totalGanado +coutValor
-                      date[index] = momentDate.format('DD-MM-YYYY');
-                      momentDate.add(1, 'month');
+            return row;
 
-                    row = {
-                        coutPerido : index,
-                        cuota : coutValor,
-                        pay : payInterest,
-                        money : payCapital,
-                        total : mount,
-                        datei : date[index]
-                    }
+        }
 
-                    let card =  generateCard(row);    
-                    $('#evento tbody').append(card);
-                    
-                
-                } 
-                    //append
-                  $('#total-amount').val(totalGanado.toFixed(2));
-
-                return row;
-               
-             }
-
-                //generate card
-             let generateCard = (info)=>{
-                        let  row = `
+        //generate card
+        let generateCard = (info) => {
+            let row = ` 
                         <tr>
                             <td>${info.coutPerido}</td>
                             <td>${info.datei}</td>
@@ -77,64 +78,72 @@ window.addEventListener('load',()=>{
                             <td>${info.money.toFixed(2)}</td>
                             <td>${info.pay.toFixed(2)}</td>
                             <td>${info.total.toFixed(2)}</td>
-                      </tr>
-                       `;
-                        return row
-                    
-                        // <td class="sorting_1" tabindex="0">22009.17</td>
-             }
+                      </tr> `;
+                              
+            return row
 
+        }
 
               //Clean buttom 
-            let buttonCLean = document.getElementById('clean').addEventListener('click',()=>{
-                    
-                  if(fecha_vacia()== false ){
-                      amount.value = "";
-                      interes.value = "";
-                      cuotas.value = "";
-                      currentDate.value = "";
-                      totalRecaudado.value = '';
-                      
+          $('clean').click(function (e) { 
+                  if (fecha_vacia() == false) {
+                    amount.value = "";
+                    interes.value = "";
+                    cuotas.value = "";
+                    currentDate.value = "";
+                    totalRecaudado.value = '';
+                    tableDiv.innerHTML = "";
+                    console.log(tableDiv)
 
-                  }
+                }
+            
+          });
 
-            });
+
+          let insertarDetalles = ()=>{
+            $('#montoAmortizacion').replaceWith(amount.value);
+            $('#interesAmortizacion').replaceWith(interes.value);
+            $('#periodoAmortizacion').replaceWith(cuotas.value);
+            $('#fechaAmortizacion').replaceWith(currentDate.value);
+            $('#plazoAmortizacion').replaceWith('Mensual');
+              
+          }
 
 
         //click event buttom
-       $('#btn-calculator').click(function () { 
+        $('#btn-calculator').click(function() {
 
             //empty date 
-            let emptyDate =   fecha_vacia();
-              //buttom borrar
-              buttonCLean;
+            let emptyDate = fecha_vacia();
+            
+            insertarDetalles();
+            
 
-              if(emptyDate == true){
-                    Swal.fire(
-                      'Oops...',
+            if (emptyDate == true) {
+                Swal.fire(
+                    'Oops...',
                     'Por favor instroduzca la fecha de inicio',
                     'error'
-                    )
-              }else{
-                     //variable
-                  const mainAmount = Number.parseFloat(amount.value);
-                  const mainInterest = Number.parseFloat(interes.value);
-                  const mainCouts = Number.parseFloat(cuotas.value);
-                  
-                  //interest
-                  let coutValor = calculateCuot(mainInterest,mainCouts,mainAmount)
+                )
+            } else {
 
-                  //insert into table
-                   insertTable(mainCouts,mainAmount,mainInterest,coutValor);
+                //variable
+                const mainAmount = Number.parseFloat(amount.value);
+                const mainInterest = Number.parseFloat(interes.value);
+                const mainCouts = Number.parseFloat(cuotas.value);
 
-              }
-           
-       });
+                
 
+                //interest
+                let coutValor = calculateCuot(mainInterest, mainCouts, mainAmount)
 
-       
+                //insert into table
+                insertTable(mainCouts, mainAmount, mainInterest, coutValor);
 
-   
-         
+                
 
-})//DOCUMENT READY FUNCTION
+            }
+
+        });
+
+    }) //DOCUMENT READY FUNCTION
