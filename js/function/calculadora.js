@@ -7,9 +7,10 @@ let currentDate = document.getElementById('start_date');
 let totalRecaudado = document.getElementById('total-amount');
 let tableDiv = document.getElementById('tBody')
 
+//array
 let date = [];
 
-//ADDEVENTLISTENER
+//ADD EVENT LISTENER
 window.addEventListener('load', () => {
 
         //empty date
@@ -54,17 +55,16 @@ window.addEventListener('load', () => {
                     money: payCapital,
                     total: mount,
                     datei: date[index]
-                }
-
+                };
+                //append card
                 let card = generateCard(row);
-                
                 $('#evento tbody').append(card);
 
             }
             //append
             $('#total-amount').val(totalGanado.toFixed(2));
 
-            return row;
+          
 
         }
 
@@ -79,45 +79,50 @@ window.addEventListener('load', () => {
                             <td>${info.pay.toFixed(2)}</td>
                             <td>${info.total.toFixed(2)}</td>
                       </tr> `;
-                              
+
             return row
 
         }
 
-              //Clean buttom 
-          $('clean').click(function (e) { 
-                  if (fecha_vacia() == false) {
-                    amount.value = "";
-                    interes.value = "";
-                    cuotas.value = "";
-                    currentDate.value = "";
-                    totalRecaudado.value = '';
-                    tableDiv.innerHTML = "";
-                    console.log(tableDiv)
+        //Clean buttom 
+        $('#clean').click(function() {
+            if (fecha_vacia() == false) {
+                amount.value = "";
+                interes.value = "";
+                cuotas.value = "";
+                currentDate.value = "";
+                totalRecaudado.value = '';
+                tableDiv.innerHTML = "";
+                $('#montoAmortizacion').val("");
+                $('#fechaAmortizacion').val("");
+                $('#interesAmortizacion').val("");
+                $('#periodoAmortizacion').val("");
+                $('#plazoAmortizacion').val('');
 
-                }
+            }
+
+        });
+
+        //insert dataill function
+        let insertarDetalles = () => {
+            $('#montoAmortizacion').val(amount.value);
+            $('#fechaAmortizacion').val(currentDate.value);
+            $('#interesAmortizacion').val(interes.value);
+            $('#periodoAmortizacion').val(cuotas.value);
+            $('#plazoAmortizacion').val('mensual');
+        }
+
+
+        $('#print').click(function () { 
+            $('#printcard').printThis();
             
-          });
-
-
-          let insertarDetalles = ()=>{
-            $('#montoAmortizacion').replaceWith(amount.value);
-            $('#interesAmortizacion').replaceWith(interes.value);
-            $('#periodoAmortizacion').replaceWith(cuotas.value);
-            $('#fechaAmortizacion').replaceWith(currentDate.value);
-            $('#plazoAmortizacion').replaceWith('Mensual');
-              
-          }
-
+        });
 
         //click event buttom
         $('#btn-calculator').click(function() {
 
             //empty date 
             let emptyDate = fecha_vacia();
-            
-            insertarDetalles();
-            
 
             if (emptyDate == true) {
                 Swal.fire(
@@ -127,20 +132,28 @@ window.addEventListener('load', () => {
                 )
             } else {
 
+                //after clean function
+                $('#montoAmortizacion').val("");
+                $('#fechaAmortizacion').val("");
+                $('#interesAmortizacion').val("");
+                $('#periodoAmortizacion').val("");
+                $('#plazoAmortizacion').val('');
+                tableDiv.innerHTML = "";
+
                 //variable
                 const mainAmount = Number.parseFloat(amount.value);
                 const mainInterest = Number.parseFloat(interes.value);
                 const mainCouts = Number.parseFloat(cuotas.value);
 
-                
+                 //fill detaills
+                insertarDetalles();    
+
 
                 //interest
                 let coutValor = calculateCuot(mainInterest, mainCouts, mainAmount)
 
                 //insert into table
                 insertTable(mainCouts, mainAmount, mainInterest, coutValor);
-
-                
 
             }
 

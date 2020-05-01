@@ -299,6 +299,39 @@ img.bill {
     justify-content: center;
 }
 
+/***DETALLE DE PANTILLA DE PRESTAMOS***/
+.fecha-prestamos {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+}
+.monto-prestamos{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+}
+
+.periodo-prestamos{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+}
+
+.interes-prestamos{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+}
+.plazo-prestamos{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+}
+.font-size{
+    text-align: center;
+    font-size: 20px;
+}
+
 /***CREAR PRESTAMO**/
 .hr-line-dashed {
     border-top: 1px dashed #e7eaec;

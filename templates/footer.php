@@ -36,6 +36,8 @@
 <script src="js/sweetalert2.min.js"></script>
 <!-- ajax-funcion -->
 <script src="js/function/admin-ajax.js"></script>
+<!--Calculadora amortizacion-->
+<script src="js/printThis.js"></script> 
 <!--App-->
 <script src="js/app.js"></script>
 <!--Calculadora amortizacion-->

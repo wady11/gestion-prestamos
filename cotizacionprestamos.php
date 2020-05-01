@@ -105,7 +105,7 @@ to get the desired effect
                                         <div class="col-sm-5" style="text-align:center">
                                             <button class="btn btn-primary" type="button" id="btn-calculator">Calcular</button>
                                             <button class="btn  btn-secondary" type="button" id="clean">Limpiar</button>
-                                            <button class="btn  btn-info" type="button" id="clean"><i class="fas fa-print"></i>Print</button>
+                                            <button class="btn  btn-info" type="button" id="print"><i class="fas fa-print"></i>Print</button>
                                             <!-- <button class="btn btn-app"><i class="fas fa-save"></i> Save</button> -->
                                         </div>
 
@@ -115,7 +115,7 @@ to get the desired effect
 
                                     <div class="row" style="margin-top:30px">
                                         <div class="col-12">
-                                            <div class="card">
+                                            <div class="card" id="printcard">
                                                 <div class="card-header">
                                                     <h3 class="card-title">Tabla de Amortizacion</h3>
                                                 </div>
@@ -124,23 +124,25 @@ to get the desired effect
                                                     <div class="container-amortizacion">
                                                         <div class="fecha-prestamos">
                                                             <label>Fecha del prestamo:</label>
-                                                            <div id="fechaAmortizacion">00.00 </div>
+                                                            <input type="text" id="fechaAmortizacion" style="border:none;width:119px">
+                                                            
                                                         </div>
                                                         <div class="monto-prestamos">
                                                             <label>Monto:</label>
-                                                            <div id="montoAmortizacion">00.00 </div>
+                                                            <input type="text" id="montoAmortizacion" style="border:none;width:119px">
                                                         </div>
                                                         <div class="periodo-prestamos">
                                                             <label>Periodo:</label>
-                                                            <div id="periodoAmortizacion">00.00 </div>
+                                                            <input type="text" id="periodoAmortizacion" style="border:none;width:119px">
                                                         </div>
                                                         <div class="interes-prestamos">
                                                             <label>Interes:</label>
-                                                            <div id="interesAmortizacion">00.00 </div>
+                                                            <input type="text" id="interesAmortizacion" style="border:none;width:119px">
                                                         </div>
                                                         <div class="plazo-prestamos">
                                                             <label>Plazo:</label>
-                                                            <div id="plazoAmortizacion">00.00 </div>
+                                                            <input type="text" id="fechaAmortizacion" style="border:none;width:119px">
+
                                                         </div>
 
                                                     </div>
