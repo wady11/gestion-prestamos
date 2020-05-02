@@ -105,7 +105,7 @@ to get the desired effect
                                         <div class="col-sm-5" style="text-align:center">
                                             <button class="btn btn-primary" type="button" id="btn-calculator">Calcular</button>
                                             <button class="btn  btn-secondary" type="button" id="clean">Limpiar</button>
-                                            <button class="btn  btn-info" type="button" id="print"><i class="fas fa-print"></i>Print</button>
+                                            <button class="btn  btn-info" type="button" id="print" ><i class="fas fa-print"></i>Print</button>
                                             <!-- <button class="btn btn-app"><i class="fas fa-save"></i> Save</button> -->
                                         </div>
 
@@ -141,7 +141,7 @@ to get the desired effect
                                                         </div>
                                                         <div class="plazo-prestamos">
                                                             <label>Plazo:</label>
-                                                            <input type="text" id="fechaAmortizacion" style="border:none;width:119px">
+                                                            <input type="text" id="plazoAmortizacion" style="border:none;width:119px" >
 
                                                         </div>
 

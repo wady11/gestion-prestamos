@@ -15,6 +15,8 @@
   <link rel="stylesheet" href="css/adminlte.min.css">
   <!-- sweetaler2 css -->
   <link rel="stylesheet" href="css/sweetalert2.min.css">
+  <!--print-->
+  <link rel="stylesheet" href="css/print.min.css">
   <!--panel style-->
   <link rel="stylesheet" href="css/main.css">
   <!-- DataTables -->

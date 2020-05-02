@@ -114,11 +114,20 @@ window.addEventListener('load', () => {
 
 
         $('#print').click(function () { 
-            $('#printcard').printThis();
+            
+                let imprimir = document.getElementById('printcard').innerHTML; //obtenemos el objeto a imprimir
+                // var divContents = document.getElementById("GFG"). innerHTML; 
+                var a = window.open('', '', 'height=500, width=500'); 
+                a.document.write('<html>'); 
+                a.document.write('<body > <h1>Div contents are <br>'); 
+                a.document.write(imprimir); 
+                a.document.write('</body></html>'); 
+                a.document.close(); 
+                a.print(); 
             
         });
 
-        //click event buttom
+        // click event buttom
         $('#btn-calculator').click(function() {
 
             //empty date 
