@@ -141,7 +141,7 @@ to get the desired effect
                                                         </div>
                                                         <div class="plazo-prestamos">
                                                             <label>Plazo:</label>
-                                                            <input type="text" id="fechaAmortizacion" style="border:none;width:119px">
+                                                            <input type="text" id="plazoAmortizacion" style="border:none;width:119px" >
 
                                                         </div>
 
