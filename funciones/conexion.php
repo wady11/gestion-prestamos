@@ -1,7 +1,7 @@
 <?php
     // nmysql conection
-    $conn = new mysqli('localhost', 'root', '', 'test');
-    // $conn = new mysqli('localhost', 'root', '', 'prestamosdba');
+    // $conn = new mysqli('localhost', 'root', '', 'test');
+    $conn = new mysqli('localhost', 'root', '', 'prestamosdba');
     
 
     //just in case of error

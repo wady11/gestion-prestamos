@@ -248,9 +248,26 @@ if(isset($_POST['edit'])){
 
 if (isset($_POST['add-prestamo'])) {
 
+    //variables
+    $nombreCliente = $_POST['nombrecliente'];
+    $cuentaCliente = $_POST['cuentacliente'];
+    $descripcionCLiente = $_POST['description'];
+    $garanteCliente = $_POST['garante'];
+    $statePrestamo = $_POST['estadoprestamo'];
+    $montoPrestamo = $_POST['montoprestamos'];
+    $interesPrestamo = $_POST['interesprestamo'];
+    $termsCliente = $_POST['term'];
+    $fechaPrestamo = $_POST['fechaprestamo'];
+    
+    if ($nombreCliente == "" && $montoPrestamo == "" && $interesPrestamo == "" 
+            && $termsCliente=="" && $fechaPrestamo ==""){
+        # code...
+    }
     echo '<pre>';
     var_dump($_POST);
     echo '</pre>';
+
+    
 }
 
 

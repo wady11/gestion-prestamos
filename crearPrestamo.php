@@ -33,10 +33,10 @@
                         <div class="card-body">
                             <div class="form-group">
                                 <label class="col-sm-2 control-label">
-                                    <label for="" class="wide required" aria-required="true">Cliente:</label>
+                                    <label for="nombrecliente" class="wide required" aria-required="true">Cliente:</label>
                                 </label>
                                 <div class="col-sm-10">
-                                    <input type="text" name="" value="" id="" class="form-control" placeholder="Escribe el nombre aquí..." style="display:" autocomplete="off">
+                                    <input type="text" name="nombrecliente" value="" id="nombrecliente" class="form-control" placeholder="Escribe el nombre aquí..." style="display:" autocomplete="off">
 
                                     <span id="sp-customer" style="display: none">
                                       <span><a href="javascript:void(0)" title="Remove Customer" class="btn-remove-row"><i class="fa fa-times"></i></a></span>
@@ -46,10 +46,10 @@
                             <div class="hr-line-dashed"></div>
                             <div class="form-group">
                                 <label class="col-sm-2 control-label">
-                                    <label for="" class="wide required" aria-required="true">Cuenta:</label>
+                                    <label for="cuentacliente" class="wide required" aria-required="true">Cuenta:</label>
                                 </label>
                                 <div class="col-sm-10">
-                                    <input type="text" placeholder="#" name="" value="" id="" class="form-control" style="display:" autocomplete="off">
+                                    <input type="text" placeholder="#" name="cuentacliente" value="" id="cuentacliente" class="form-control" style="display:" autocomplete="off">
                                 </div>
                             </div>
                             <div class="hr-line-dashed"></div>
@@ -68,7 +68,7 @@
                                     <label for="garante" class="wide required" aria-required="true">Garante:</label>
                                 </label>
                                 <div class="col-sm-10">
-                                    <input type="text" name="garante" value="" id="" class="form-control" placeholder="Escribe el nombre aquí..." style="display:" autocomplete="off">
+                                    <input type="text" name="garante" value="" id="garante" class="form-control" placeholder="Escribe el nombre aquí..." style="display:" autocomplete="off">
 
                                 </div>
                             </div>
@@ -89,16 +89,16 @@
 
                                 <div class="inqbox-title-dahed"></div>
                                 <div class="col-md-3 mb-3">
-                                    <label for="monto">Monto</label>
-                                    <input type="text" class="form-control" name="" id="">
+                                    <label for="montoprestamos">Monto</label>
+                                    <input type="text" class="form-control" name="montoprestamos" id="montoprestamo">
                                     <div class="valid-feedback">
                                         <!-- Please provide a valid zip. -->
                                     </div>
                                 </div>
                                 <div class="input-group col-md-3 mb-3">
-                                    <label for="cellPhone"> tasa Interes</label>
+                                    <label for="interesprestamo"> tasa Interes</label>
                                     <div class="input-group">
-                                        <input type="text" class="form-control">
+                                        <input type="text" class="form-control" name="interesprestamo">
                                         <div class="input-group-append">
                                             <span class="input-group-text"><i class="fas fa-percentage"></i></span>
                                         </div>
@@ -110,24 +110,19 @@
                                 </div>
                                 <div class="form-row ">
                                     <div class="form-group col-md-2">
-                                        <label for="inputEmail4">Cuotas</label>
+                                        <label for="terme">Cuotas</label>
                                         <input type="text" name="term" id="term" class="form-control" value="">
                                         
                                     </div>
                                     <div class=" col-md-2">
-                                    <label for="inputEmail4">periodo</label>
-                                        <select class="form-control valid" name="term_period" id="term_period" aria-invalid="false">
-                                            <option value="day">días</option>
-                                            <option value="week">Semanas</option>
-                                            <option value="month">Meses</option>
-                                            <option value="year">Años</option>
-                                        </select>
+                                    <label for="periodo">periodo</label>
+                                         <input type="text" name="periodo" id="periodo" class="form-control" value="mensual" disabled="disable">
                                     </div>
                                   
                                 </div>
                             <div class="col-md-3 mb-3">
                                 <label for="telephone">Fecha de Inicio</label>
-                                <input type="text" class="form-control " name="telephone" id="fechaprestamo">
+                                <input type="text" class="form-control " name="fechaprestamo" id="fechaprestamo">
                                 <div class="valid-feedback">
                                     <!-- Please provide a valid state. -->
                                 </div>
@@ -135,7 +130,7 @@
 
                                 <div class="col-md-4 mb-3">
                                     <label for="">Monto del pago</label>
-                                    <input type="text" class="form-control " name="" id="" >
+                                    <input type="text" class="form-control " name="" id="mostramonto" disabled='disable' >
                                     <div class="valid-feedback">
                                     </div>
                                 </div>

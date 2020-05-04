@@ -23,14 +23,14 @@ $(function () {
 
 
 
-//DATETIMEPICKER
-$('#fechaprestamo').datepicker();
+
 
 //JQUERY-UI
 $('#tooltiphome').tooltip();
 $('#tooltipcalcu').tooltip();
 $('.addbottom').tooltip();
 
+//input mask
 $('[data-mask]').inputmask()
 
 'use strict';
