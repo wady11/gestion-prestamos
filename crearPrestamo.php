@@ -29,7 +29,7 @@
                     <h3 class="card-title"></h3>
 
                     <!-- form start -->
-                    <form role="form" method="post" action="insert-admin.php">
+                    <form role="form" method="post" action="insert-admin.php" id='formPrestamo'>
                         <div class="card-body">
                             <div class="form-group">
                                 <label class="col-sm-2 control-label">
@@ -58,7 +58,7 @@
                                     <label for="description" class="wide">Descripción:</label>
                                 </label>
                                 <div class="col-sm-10">
-                                    <textarea name="description" cols="17" rows="5" id="" class="form-control" placeholder="Enter..."></textarea>
+                                    <textarea name="description" cols="17" rows="5"  class="form-control" placeholder="Enter..."></textarea>
                                 </div>
                             </div>
                            
@@ -78,7 +78,7 @@
                                     <label for="estadoprestamos" class="wide required" aria-required="true">Estado del Prestamo:</label>
                                 </label>
                                 <div class="col-sm-10">
-                                    <input type="text" name="estadoprestamo" value="Aprobado" id="" class="form-control" style="display:" autocomplete="off">
+                                    <input type="text" name="estadoprestamo" value="Aprobado"  class="form-control" style="display:" autocomplete="off">
 
                                 </div>
                             </div>
@@ -111,18 +111,19 @@
                                 <div class="form-row ">
                                     <div class="form-group col-md-2">
                                         <label for="terme">Cuotas</label>
-                                        <input type="text" name="term" id="term" class="form-control" value="">
+                                        <input type="text" name="term" id="term" class="form-control" >
                                         
                                     </div>
                                     <div class=" col-md-2">
-                                    <label for="periodo">periodo</label>
-                                         <input type="text" name="periodo" id="periodo" class="form-control" value="mensual" disabled="disable">
+                                    <label for="tipoperiodo">periodo</label>
+                                    <input type="text"  class="form-control" value="mensual" disabled='disable' >
+                                    <input type="hidden" name="periodo" id="periodo" class="form-control" value="mensual" >
                                     </div>
                                   
                                 </div>
                             <div class="col-md-3 mb-3">
                                 <label for="telephone">Fecha de Inicio</label>
-                                <input type="text" class="form-control " name="fechaprestamo" id="fechaprestamo">
+                                <input type="date" class="form-control " name="fechaprestamo" id="fechaprestamo">
                                 <div class="valid-feedback">
                                     <!-- Please provide a valid state. -->
                                 </div>

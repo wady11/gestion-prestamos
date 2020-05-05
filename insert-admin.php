@@ -246,8 +246,11 @@ if(isset($_POST['edit'])){
 }//edit-user
 
 
+//create prestamo
 if (isset($_POST['add-prestamo'])) {
-
+    // echo '<pre>';
+    //     var_dump($_POST);
+    //     echo '</pre>';
     //variables
     $nombreCliente = $_POST['nombrecliente'];
     $cuentaCliente = $_POST['cuentacliente'];
@@ -257,17 +260,45 @@ if (isset($_POST['add-prestamo'])) {
     $montoPrestamo = $_POST['montoprestamos'];
     $interesPrestamo = $_POST['interesprestamo'];
     $termsCliente = $_POST['term'];
+    $formatoPago = $_POST['periodo'];   
     $fechaPrestamo = $_POST['fechaprestamo'];
+    
+
+    die(json_encode($_POST));
     
     if ($nombreCliente == "" && $montoPrestamo == "" && $interesPrestamo == "" 
             && $termsCliente=="" && $fechaPrestamo ==""){
-        # code...
-    }
-    echo '<pre>';
-    var_dump($_POST);
-    echo '</pre>';
 
-    
+            $answer = array(
+                'respuesta '=> 'reject'
+            );
+        
+    }else{
+        try {
+            $state = $conn->prepare("INSERT INTO `prestamos`(nombre_prestamo,cuentaPrestamos,descripcion_prestamo,garante_prestamo,estado_prestamo,fcreacion_prestamo,monto_prestamo,interes_prestamos,cuotas_prestamos,formatopago_prestamo)  VALUES(?,?,?,?,?,?,?,?,?,?);");
+            $state->bind_param('ssssssiiis',$nombreCLiente,$cuentaCliente,$descripcionCliente,$garanteCLiente,$statePrestamo ,$fechaPrestamo,$montoPrestamo,$interesPrestamo,$termsCliente,$formatoPago);
+            $state->execute();
+            if( mysqli_affected_rows($conn ) > 0){
+                $answer = array(
+                    'answer' => 'success',
+                    'usuario'=> $nombreCliente,
+                    'lastName' => $fechaPrestamo 
+                );
+            }
+            $state->close();
+            $conn->close();
+        } catch (\Throwable $th) {
+            $answer = array(
+                'answer'=> $th->getMessage()
+            );
+        }
+       
+    }   
+    // echo '<pre>';
+    // var_dump($_POST);
+    // echo '</pre>';
+
+  die(json_encode($answer));
 }
 
 

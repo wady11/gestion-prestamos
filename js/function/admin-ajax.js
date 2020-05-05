@@ -204,7 +204,30 @@ doc.addEventListener('DOMContentLoaded',()=>{
             
         });//edit-user ends
 
-        
+    //    $('#formPrestamo').submit(function (e) { 
+    //        e.preventDefault();
+
+    //        let data = $(this).serializeArray();
+
+    //        $.ajax({
+    //            type: $(this).attr('method'),
+    //            url: $(this).attr('action'),
+    //            data: data,
+    //            dataType: "json",
+    //            success: function (response) {
+    //                let result = response
+    //                console.log(result);
+                   
+    //            }
+
+
+
+    //        });
+
+    //    }); // prestamos form   
+
+
+
        
 });//DOM CONTENT LOADED
 
