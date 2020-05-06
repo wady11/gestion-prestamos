@@ -12,7 +12,7 @@
         <div class="container-panel">
             <?php
                 //sql section
-                $sqlQuery = "SELECT * FROM `user`";
+                $sqlQuery = "SELECT * FROM `prestamos`";
                 $result = $conn->query($sqlQuery);
                 
 

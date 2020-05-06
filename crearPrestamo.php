@@ -110,7 +110,7 @@
                                 </div>
                                 <div class="form-row ">
                                     <div class="form-group col-md-2">
-                                        <label for="terme">Cuotas</label>
+                                        <label for="term">Cuotas</label>
                                         <input type="text" name="term" id="term" class="form-control" >
                                         
                                     </div>

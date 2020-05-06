@@ -248,9 +248,6 @@ if(isset($_POST['edit'])){
 
 //create prestamo
 if (isset($_POST['add-prestamo'])) {
-    // echo '<pre>';
-    //     var_dump($_POST);
-    //     echo '</pre>';
     //variables
     $nombreCliente = $_POST['nombrecliente'];
     $cuentaCliente = $_POST['cuentacliente'];
@@ -264,41 +261,45 @@ if (isset($_POST['add-prestamo'])) {
     $fechaPrestamo = $_POST['fechaprestamo'];
     
 
-    die(json_encode($_POST));
-    
-    if ($nombreCliente == "" && $montoPrestamo == "" && $interesPrestamo == "" 
-            && $termsCliente=="" && $fechaPrestamo ==""){
-
-            $answer = array(
-                'respuesta '=> 'reject'
-            );
-        
-    }else{
         try {
-            $state = $conn->prepare("INSERT INTO `prestamos`(nombre_prestamo,cuentaPrestamos,descripcion_prestamo,garante_prestamo,estado_prestamo,fcreacion_prestamo,monto_prestamo,interes_prestamos,cuotas_prestamos,formatopago_prestamo)  VALUES(?,?,?,?,?,?,?,?,?,?);");
-            $state->bind_param('ssssssiiis',$nombreCLiente,$cuentaCliente,$descripcionCliente,$garanteCLiente,$statePrestamo ,$fechaPrestamo,$montoPrestamo,$interesPrestamo,$termsCliente,$formatoPago);
-            $state->execute();
-            if( mysqli_affected_rows($conn ) > 0){
-                $answer = array(
-                    'answer' => 'success',
-                    'usuario'=> $nombreCliente,
-                    'lastName' => $fechaPrestamo 
-                );
-            }
-            $state->close();
-            $conn->close();
-        } catch (\Throwable $th) {
-            $answer = array(
-                'answer'=> $th->getMessage()
-            );
-        }
-       
-    }   
-    // echo '<pre>';
-    // var_dump($_POST);
-    // echo '</pre>';
 
-  die(json_encode($answer));
+            if ($nombreCliente == "" && $montoPrestamo == "" && $interesPrestamo == "" 
+                && $termsCliente=="" && $fechaPrestamo ==""){
+
+                $answer = array(
+                    'respuesta '=> 'reject'
+                );
+                
+            }else{
+
+                $sqlSatament = $conn->prepare("INSERT into `prestamos`(nombre_prestamo,cuentaPrestamos,descripcion_prestamo,garante_prestamo,estado_prestamo,fcreacion_prestamo,monto_prestamo,interes_prestamos,cuotas_prestamos,formatopago_prestamo) VALUES(?,?,?,?,?,?,?,?,?,?);");
+                $sqlSatament->bind_param("ssssssiiis",$nombreCliente,$cuentaCliente,$descripcionCLiente,$garanteCliente,$statePrestamo,$fechaPrestamo,$montoPrestamo,$interesPrestamo,$termsCliente,$formatoPago);
+                $sqlSatament->execute();
+
+                if (mysqli_affected_rows($conn ) > 0) {
+                    $answer = array(
+                        'respuesta' => 'success'
+                    );
+    
+                }else{
+                    $answer = array(
+                        'respuesta' => 'fail'
+                    );
+                }
+
+                $sqlSatament->close();
+                $conn->close();
+                
+
+            }
+                
+         } catch (\Throwable $th) {
+                $answer = array(
+                    'answer'=> $th->getMessage()
+                );
+         }
+
+   die( json_encode($answer));
 }
 
 

@@ -23,6 +23,9 @@
     </section>
     <?php
         
+
+        //se tienene
+
       //sql selection
       $SQL = "SELECT * FROM `user`";
       $result = $conn->query($SQL);
