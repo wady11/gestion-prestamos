@@ -46,10 +46,10 @@
                             <div class="hr-line-dashed"></div>
                             <div class="form-group">
                                 <label class="col-sm-2 control-label">
-                                    <label for="cuentacliente" class="wide required" aria-required="true">Cuenta:</label>
+                                    <label for="cuentacliente" class="wide required" aria-required="true">Cedula:</label>
                                 </label>
                                 <div class="col-sm-10">
-                                    <input type="text" placeholder="#" name="cuentacliente"  id="cuentacliente" class="form-control" style="display:" autocomplete="off">
+                                    <input type="text" placeholder="#" name="cuentacliente"  id="cuentacliente" class="form-control" style="display:" autocomplete="off" disabled='disable'>
                                 </div>
                             </div>
                             <div class="hr-line-dashed"></div>

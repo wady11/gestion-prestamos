@@ -224,16 +224,16 @@ img.refresh-img {
     display: inline-block;
 }
 .autocomplete-list-item{
-    color: #ccc;
     position: absolute;
     border: 1px solid #d4d4dd;
     border-bottom: none;
+    border-top: none;
     z-index: 99;
 
     top: 100%;
-    left: 20px;
+    left: 12px;
     right: 0;
-    width: 93%;
+    width: 94%;
 }
 .autocomplete-list-item div{
     padding: 10px;
