@@ -148,7 +148,7 @@
 
     <div class="col-md-4 mb-3">
       <label for="cedula">Cedula</label>
-      <input type="text" class="form-control is-valid" name="cedula" id="cedula" placeholder="Cedula" value='<?php echo $editUser['user_cedula']?>'  >
+      <input type="text" class="form-control is-invalid" name="cedula" id="cedula"  value='<?php echo $editUser['user_cedula']?>'  >
       <div class="valid-feedback">
         <!-- Looks good! -->
       </div>

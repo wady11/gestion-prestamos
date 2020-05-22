@@ -198,9 +198,9 @@ if(isset($_POST['add-user'])){
 if(isset($_POST['edit'])){
 
     // echo '<pre>';
-    // var_dump($_POST);
+    //     var_dump($_POST);
     // echo '</pre>';
-    
+    // die();
     $nombreUsuario = $_POST['name'];
     $apellidoUsuario = $_POST['lastName'];
     $emailUsuario = $_POST['email'];
@@ -218,18 +218,19 @@ if(isset($_POST['edit'])){
         try {
             $stament = $conn->prepare("UPDATE `user` SET user_name = ? ,user_lastname = ?,user_email= ?,user_address = ? ,user_cedula = ? ,user_telephone= ? ,user_cellphone = ? , user_city = ? ,user_town= ? ,user_bank = ? ,user_bankaccount = ? , user_date = ?, user_time= NOW() WHERE user_id = ? ;");
             $stament->bind_param('ssssssssssssi',$nombreUsuario,$apellidoUsuario,$emailUsuario,$direccionUsuario,$cedulaUsuario,$telephonoUsuario,$cellphoneUsuario,$cityUsuario,$townUsuario,$bankUsuario,$acountBankUsuario,$dateUsuario,$id_user);
-             $stament->execute();
-            if( mysqli_affected_rows($conn ) > 0){
+            $stament->execute();
+            //  echo mysqli_affected_rows();
+            if(mysqli_affected_rows($conn) > 0){
                 $respuesta = array(
                     'answer' => 'success',
-                    'update-id' => $stament->$id_user,
                     'usuario'=> $nombreUsuario,
                     'lastName' => $apellidoUsuario 
                 );
             }
             else{
                 $respuesta = array(
-                    'answer' => 'reject'
+                    'answer' => 'reject',
+                    'cedula'=>'repetida'
                 );
             }
             $stament->close();
@@ -241,7 +242,7 @@ if(isset($_POST['edit'])){
             );
         }
 
-     die(json_encode($respuesta));
+   die(json_encode($respuesta));
 
 }//edit-user
 

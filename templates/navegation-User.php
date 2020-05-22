@@ -94,7 +94,7 @@
                 </a>
               </li> -->
               <li class="nav-item">
-                <a href="#" class="nav-link">
+                <a href="/Admin-LTE/list-prestamos.php" class="nav-link">
                 <i class="fas fa-list nav-icon"></i>
                   <p>Lista de Prestamos</p>
                 </a>

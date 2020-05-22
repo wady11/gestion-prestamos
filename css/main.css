@@ -57,7 +57,9 @@ a {
     text-decoration: none;
     color: #707070;
 }
-
+strong{
+    color: black;
+}
 
 
 
@@ -79,8 +81,8 @@ a {
 .main-container {
     border: 1px solid #707070;
     width: 78%;
-    height: 493px;
-    border-radius: 8px;
+    /* height: 493px; */
+    /* border-radius: 8px; */
     background-color: white;
 }
 
@@ -187,7 +189,7 @@ img.refresh-img {
     width: 21px;
 }
 
-i.fa.fa-user-plus {
+.plus {
     font-size: 23px;
     margin-right: 35px;
     margin-left: 58px;
@@ -211,7 +213,51 @@ i.fa.fa-user-plus {
 .picture-container {
     display: flex;
 }
+.picture-container ul li a:hover{
+    color: #09ec28;
+    animation: ease-in;
+}
 
+/***AUTOCOMPLETE***/
+.autocomplete{
+    position: relative;
+    display: inline-block;
+}
+.autocomplete-list-item{
+    color: #ccc;
+    position: absolute;
+    border: 1px solid #d4d4dd;
+    border-bottom: none;
+    z-index: 99;
+
+    top: 100%;
+    left: 20px;
+    right: 0;
+    width: 93%;
+}
+.autocomplete-list-item div{
+    padding: 10px;
+    cursor: pointer;
+    background-color: #fff;
+    border-bottom: 1px solid #d4d4dd;
+}
+.autocomplete-list-item div:hover{
+    background-color: dodgerblue;
+
+}
+
+.autocomplete-active{
+    background-color: dodgerblue !important;
+    color: #a1caff;
+}
+.autocomplete-desactive{
+    background-color: red;
+    color:#ccc;
+}
+
+.autocomplete-active strong{
+    color: #fff;
+}
 
 /*BUTTOM*/
 
@@ -219,6 +265,7 @@ i.fa.fa-user-plus {
     display: flex;
     width: 69%;
     justify-content: center;
+    margin: 0 0 30px 0;
 }
 
 button.show-movement {
@@ -355,6 +402,13 @@ img.bill {
 }
 /***MEDIA QUERY***/
 
+/* @media only screen and (min-width: 480px) {
+    .detail-container {
+        display: flex;
+        margin-top: 77px;
+        flex-wrap: wrap;
+    }
+} */
 @media only screen and (max-width: 320px) {
     header {
         padding: 0;
@@ -402,4 +456,14 @@ img.bill {
         border-left: 4px solid green;
         margin-bottom: 16px;
     }
+    .button-container {
+        display: flex;
+        width: 100%;
+        justify-content: center;
+    }
+    .detail-bar h3 {
+        margin: 0;
+
+    }
+    
 }

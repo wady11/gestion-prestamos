@@ -43,10 +43,20 @@ to get the desired effect
           $showClient = $resultshow->fetch_assoc();
         } catch (\Throwable $th) {
           $error = $th->message();
-          echo $error;
+          // echo $error;
         }
         
-      //  echo '<pre>';
+
+        //show total money borred
+        try {
+          $sqlMoney = 'SELECT SUM(monto_prestamo) AS montototal FROM  `prestamos`';
+          $showMoney = $conn->query($sqlMoney);
+          $moneyShow = $showMoney->fetch_assoc();
+        } catch (\Throwable $the) {
+          $er = $the->message();
+          // echo $er ;
+        }
+      //  echo '<pre
       //   var_dump($showClient);
       //   echo '</pre>';
     
@@ -62,15 +72,15 @@ to get the desired effect
             <!-- small box -->
             <div class="small-box bg-info">
               <div class="inner">
-                <h3>1,500,000</h3>
+                <h3><?php echo $moneyShow['montototal']?></h3>
 
-                <p>Prestamos</p>
+                <p>Prestado</p>
               </div>
               <div class="icon">
                 <img src="img/dollar.ico" class="icon-img" alt="Dollar">
                 <!-- <i class="ion ion-bag" style="right:49px"></i> -->
               </div>
-              <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+              <a href="/Admin-LTE/List-prestamos.php" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
             </div>
           </div>
           <!-- ./col -->

@@ -174,7 +174,7 @@ doc.addEventListener('DOMContentLoaded',()=>{
                 dataType: "json",
                 success: function (response) {
                     let resultado = response;
-                    // console.log(resultado);
+                    console.log(resultado);
                     if(response.answer == 'success'){
                         Swal.fire(
                             'Se ha actualizado con Exito',
@@ -184,7 +184,7 @@ doc.addEventListener('DOMContentLoaded',()=>{
                         setTimeout(()=>{
                             location.href = "/Admin-LTE/List-user.php";
                             this.reset();
-                        },2000)
+                        },1000)
                       
                         
                     }

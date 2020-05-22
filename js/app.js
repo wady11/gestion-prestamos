@@ -24,11 +24,13 @@ $(function () {
 
 
 
-
 //JQUERY-UI
+
+$('.actualizarcliente').tooltip();
 $('#tooltiphome').tooltip();
 $('#tooltipcalcu').tooltip();
 $('.addbottom').tooltip();
+
 
 //input mask
 $('[data-mask]').inputmask()

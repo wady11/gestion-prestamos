@@ -12,14 +12,14 @@
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
-            <h1>Lista de  Clientes</h1>
+            <h1>Lista de  Prestamos</h1>
           </div>
         </div>
       </div><!-- /.container-fluid -->
     </section>
       <?php
         try {
-          $sql = "SELECT concat_ws(' ',user_name,user_lastname) as nombre,user_id,user_cellphone,user_cedula,user_bankaccount,user_telephone, user_email FROM user ORDER by user_id ASC";
+          $sql = "SELECT id_prestamos,nombre_prestamo, garante_prestamo,fcreacion_prestamo,formatopago_prestamo,monto_prestamo,interes_prestamos,cuotas_prestamos FROM prestamos ORDER by id_prestamos ASC";
           $result = $conn->query($sql);
         } catch (\Throwable $th) {
           $error = $th->message();
@@ -36,7 +36,7 @@
           <div class="card" style="width:100%">
             <div class="card-header">
               <!-- <h3 class="card-title">Lista de Beneficiarios</h3> -->
-              <a class="btn btn-warning  addbottom"  href="/Admin-LTE/Create-user.php" title='registrar'  role="button">REGISTRAR</a>
+              <a class="btn btn-warning  addbottom"  href="/Admin-LTE/crearPrestamo.php" title='registrar prestamo'  role="button">REGISTRAR PRESTAMO</a>
             </div>
             <!-- /.card-header -->
             <div class="card-body">
@@ -45,10 +45,11 @@
                 <tr>
                   <th>Id</th>
                   <th>Usuario</th>
-                  <th>Celular</th>
-                  <th>Cedula</th>
-                  <th>Cuenta de Banco</th>
-                  <th>Correo</th>
+                  <th>Garante</th>
+                  <th>Interes</th>
+                  <th>Monto Prestado</th>
+                  <th>Fecha del prestamo</th>
+                  <th>Cuotas</th>
                   <th>Action</th>
                   <?php
                       //GENERATE  SECURE URL
@@ -66,15 +67,22 @@
 
                   while($user = $result->fetch_assoc()) { ?>
                   <tr>
-                      <td><?php echo $user['user_id']?></td>
-                      <td><?php echo $user['nombre']?></td>
-                      <td><?php echo $user['user_cellphone']?></td>
-                      <td><?php echo $user['user_cedula']?></td>
-                      <td><?php echo $user['user_bankaccount']?></td>
-                      <td><?php echo $user['user_email']?></td>
-                      <td style="text-align:center"   >
-                          <a href="Edit-user.php?id=<?php echo generateURLSecure($user['user_id']) ?>" title="actualizar"    class="btn bg-orange btn-flat margin actualizarcliente"  >
-                           <i class="fa fa-user-edit" ></i>
+                      <td><?php echo $user['id_prestamos']?></td>
+                      <td><?php echo $user['nombre_prestamo']?></td>
+                      <td><?php echo $user['garante_prestamo']?></td>
+                      <td><?php echo $user['interes_prestamos']?>%</td>
+                      <td>RD$ <?php echo $user['monto_prestamo']?></td>
+                      <td><?php echo $user['fcreacion_prestamo']?></td>
+                      <td><?php echo $user['cuotas_prestamos']?> Meses</td>
+                      <td style="text-align:center">
+                         <a href="panelUser.php?id=<?php echo generateURLSecure($user['id_prestamos']) ?>" title="Panel Control" class="btn bg-orange btn-flat margin">
+                             <i class="fa fa-users-cog"></i> 
+                        </a>
+                        <a href="#" title="Reenganchar" class="btn bg-orange btn-flat margin">
+                          <i class="fa fa-handshake"></i>
+                        </a>
+                        <a href="#" title="Reenganchar" class="btn bg-orange btn-flat margin">
+                        <i class="fa fa-dollar-sign"></i>
                         </a>
                       </td>
                        
@@ -90,10 +98,11 @@
                 <tr>
                   <th>Id</th>
                   <th>Usuario</th>
-                  <th>Celular</th>
-                  <th>Cedula</th>
-                  <th>Cuenta de Banco</th>
-                  <th>Correo</th>
+                  <th>Garante</th>
+                  <th>Interes</th>
+                  <th>Monto Prestado</th>
+                  <th>Fecha del prestamo</th>
+                  <th>Cuotas</th>
                   <th>Action</th>
                 </tr>
                 </tfoot>
@@ -111,7 +120,9 @@
     <!-- /.content -->
   </div>
   
-
+ <!-- <a href="panelUser.php?id="" title="Borrar Cliente" class="btn bg-orange btn-flat margin">
+                        <i class="fa fa-users-cog"></i> 
+                        </a>-->
 
 <?php 
   include_once("templates/footer.php")

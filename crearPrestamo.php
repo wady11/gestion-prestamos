@@ -35,13 +35,13 @@
                                 <label class="col-sm-2 control-label">
                                     <label for="nombrecliente" class="wide required" aria-required="true">Cliente:</label>
                                 </label>
-                                <div class="col-sm-10">
-                                    <input type="text" name="nombrecliente" value="" id="nombrecliente" class="form-control" placeholder="Escribe el nombre aquí..." style="display:" autocomplete="off">
-
-                                    <span id="sp-customer" style="display: none">
-                                      <span><a href="javascript:void(0)" title="Remove Customer" class="btn-remove-row"><i class="fa fa-times"></i></a></span>
-                                    </span>
-                                </div>
+                                <form action="#" method="post" autocomplet='off'>
+                                    <div class="col-sm-10 autocomplete" id='complete'>
+                                        <input type="text" name="nombrecliente"  id="nombrecliente" class="form-control" placeholder="Escribe el nombre aquí..." style="display:" autocomplete="off">
+                                        
+                                    </div>  
+                                </form><!--autocomplete form-->
+                                
                             </div>
                             <div class="hr-line-dashed"></div>
                             <div class="form-group">
@@ -49,7 +49,7 @@
                                     <label for="cuentacliente" class="wide required" aria-required="true">Cuenta:</label>
                                 </label>
                                 <div class="col-sm-10">
-                                    <input type="text" placeholder="#" name="cuentacliente" value="" id="cuentacliente" class="form-control" style="display:" autocomplete="off">
+                                    <input type="text" placeholder="#" name="cuentacliente"  id="cuentacliente" class="form-control" style="display:" autocomplete="off">
                                 </div>
                             </div>
                             <div class="hr-line-dashed"></div>
