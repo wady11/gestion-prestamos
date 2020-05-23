@@ -17,9 +17,9 @@
       <li class="nav-item d-none d-sm-inline-block" id='tooltiphome' title='Home'>
         <a href="/Admin-LTE/dashboard.php" class="nav-link">Home</a>
       </li>
-      <li class="nav-item d-none d-sm-inline-block" id='tooltipcalcu' title='Calculadora'>
+      <li class="nav-item d-none d-sm-inline-block" id='tooltipcalcu' title='Calculadora de Prestamos'>
           <a href="/Admin-LTE/cotizacionprestamos.php" class="user-profile nav-link">
-            <i class="fas fa-calculator"></i>Calculadora de Prestamos
+            <i class="fas fa-calculator"></i>Calculadora
           </a>
       </li>
     </ul>

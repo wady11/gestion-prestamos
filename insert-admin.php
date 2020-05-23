@@ -250,8 +250,14 @@ if(isset($_POST['edit'])){
 //create prestamo
 if (isset($_POST['add-prestamo'])) {
     //variables
+
+    // echo '<pre>';
+    //     var_dump($_POST);
+
+    // echo '</pre>';
+
     $nombreCliente = $_POST['nombrecliente'];
-    $cuentaCliente = $_POST['cuentacliente'];
+    $numeroCedula = $_POST['numerocedula'];
     $descripcionCLiente = $_POST['description'];
     $garanteCliente = $_POST['garante'];
     $statePrestamo = $_POST['estadoprestamo'];
@@ -274,7 +280,7 @@ if (isset($_POST['add-prestamo'])) {
             }else{
 
                 $sqlSatament = $conn->prepare("INSERT into `prestamos`(nombre_prestamo,cuentaPrestamos,descripcion_prestamo,garante_prestamo,estado_prestamo,fcreacion_prestamo,monto_prestamo,interes_prestamos,cuotas_prestamos,formatopago_prestamo) VALUES(?,?,?,?,?,?,?,?,?,?);");
-                $sqlSatament->bind_param("ssssssiiis",$nombreCliente,$cuentaCliente,$descripcionCLiente,$garanteCliente,$statePrestamo,$fechaPrestamo,$montoPrestamo,$interesPrestamo,$termsCliente,$formatoPago);
+                $sqlSatament->bind_param("ssssssiiis",$nombreCliente,$numeroCedula,$descripcionCLiente,$garanteCliente,$statePrestamo,$fechaPrestamo,$montoPrestamo,$interesPrestamo,$termsCliente,$formatoPago);
                 $sqlSatament->execute();
 
                 if (mysqli_affected_rows($conn ) > 0) {

@@ -35,7 +35,7 @@
                                 <label class="col-sm-2 control-label">
                                     <label for="nombrecliente" class="wide required" aria-required="true">Cliente:</label>
                                 </label>
-                                <form action="#" method="post" autocomplet='off'>
+                                <form action="#" method="#" autocomplet='off'>
                                     <div class="col-sm-10 autocomplete" id='complete'>
                                         <input type="text" name="nombrecliente"  id="nombrecliente" class="form-control" placeholder="Escribe el nombre aquí..." style="display:" autocomplete="off">
                                         
@@ -46,10 +46,11 @@
                             <div class="hr-line-dashed"></div>
                             <div class="form-group">
                                 <label class="col-sm-2 control-label">
-                                    <label for="cuentacliente" class="wide required" aria-required="true">Cedula:</label>
+                                    <label for="numerocedula" class="wide required" aria-required="true">Cedula:</label>
                                 </label>
                                 <div class="col-sm-10">
                                     <input type="text" placeholder="#" name="cuentacliente"  id="cuentacliente" class="form-control" style="display:" autocomplete="off" disabled='disable'>
+                                    <input type='hidden' id='numerocedula' name='numerocedula'>
                                 </div>
                             </div>
                             <div class="hr-line-dashed"></div>

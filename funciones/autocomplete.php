@@ -1,9 +1,9 @@
 <?php
 
   include_once('conexion.php');
-
+#SELECT concat_ws(' ',user_name,user_lastname) as nombre,user_cedula FROM user
    try {
-        $sqlstamente = 'SELECT user_name,user_cedula FROM user';
+        $sqlstamente = 'SELECT concat_ws(" ",user_name, user_lastname)as cliente, user_cedula FROM user';
         $resultUser = $conn->query($sqlstamente);
        
         
@@ -13,7 +13,7 @@
    }
 
    while ( $user = $resultUser->fetch_assoc()) {
-         $userValor[] =  $user['user_name'];
+         $userValor[] =  $user['cliente'];
          $userCedula[] = $user['user_cedula'];
 
         $object = (object)[
