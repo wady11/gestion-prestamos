@@ -15,6 +15,8 @@
 <!-- ./wrapper -->
 <!-- jQuery -->
 <script src='js/jquery.min.js'></script>
+<!--accounting.min-->
+<script src="js/accounting.min.js"></script>
 <!--JQuery-ui-->
 <script src="js/jquery-ui.min.js" type="text/javascript"></script>
 <!-- Bootstrap 4 -->
@@ -44,6 +46,10 @@
 <script src="js/function/calculadora.js"></script> 
 <!--autocomplete.js-->
 <script src="js/function/autocomplete.js"> </script>
+<!--autocomplete.js-->
+<script src="js/function/pago.js"> </script>
+<!--autocomplete del pago-->
+<script src="js/function/autocompletepago.js"> </script>
 </body>
 
 </html>

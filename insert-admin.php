@@ -274,7 +274,8 @@ if (isset($_POST['add-prestamo'])) {
                 && $termsCliente=="" && $fechaPrestamo ==""){
 
                 $answer = array(
-                    'respuesta '=> 'reject'
+                    'respuesta '=> 'reject',
+                    'nombre' => $nombreCliente
                 );
                 
             }else{
@@ -285,7 +286,10 @@ if (isset($_POST['add-prestamo'])) {
 
                 if (mysqli_affected_rows($conn ) > 0) {
                     $answer = array(
-                        'respuesta' => 'success'
+                        'respuesta' => 'success',
+                        'nombre' => $nombreCliente
+                       
+
                     );
     
                 }else{

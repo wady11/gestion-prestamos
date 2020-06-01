@@ -18,9 +18,18 @@ $(function () {
     "autoWidth": false,
     "responsive": true
   });
+
+  $("#paneluser").DataTable({
+    "paging": false,
+    "lengthChange": true,
+    "searching": false,
+    "ordering": false,
+    "info": false,
+    "autoWidth": false,
+    "responsive": true
+  });
   
 });
-
 
 
 
@@ -30,10 +39,15 @@ $('.actualizarcliente').tooltip();
 $('#tooltiphome').tooltip();
 $('#tooltipcalcu').tooltip();
 $('.addbottom').tooltip();
+$('#titlecapital').tooltip();
+$('#titleinteres').tooltip();
 
 
 //input mask
 $('[data-mask]').inputmask()
+
+
+
 
 'use strict';
 

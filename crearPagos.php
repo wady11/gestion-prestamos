@@ -13,7 +13,7 @@
             <div class="container-fluid">
                 <div class="row mb-2">
                     <div class="col-sm-6">
-                        <h1>Nuevo Prestamo</h1>
+                        <h1>Nuevo Pagos</h1>
                     </div>
                 </div>
             </div>
@@ -33,11 +33,11 @@
                         <div class="card-body">
                             <div class="form-group">
                                 <label class="col-sm-2 control-label">
-                                    <label for="nombrecliente" class="wide required" aria-required="true">Cliente:</label>
+                                    <label for="clientepago" class="wide required" aria-required="true">Cliente:</label>
                                 </label>
                                 <form action="#" method="#" autocomplet='off'>
                                     <div class="col-sm-10 autocomplete" id='complete'>
-                                        <input type="text" name="nombrecliente"  id="nombrecliente" class="form-control" placeholder="Escribe el nombre aquí..." style="display:" autocomplete="off">
+                                        <input type="text" name="clientepago"  id="clientepago" class="form-control" placeholder="Escribe el nombre aquí..." style="display:" autocomplete="off">
                                         
                                     </div>  
                                 </form><!--autocomplete form-->
@@ -54,25 +54,43 @@
                                 </div>
                             </div>
                             <div class="hr-line-dashed"></div>
-                            <div class="form-group">
-                                <label class="col-sm-2 control-label">
-                                    <label for="description" class="wide">Descripción:</label>
-                                </label>
-                                <div class="col-sm-10">
-                                    <textarea name="description" cols="17" rows="5"  class="form-control" placeholder="Enter..."></textarea>
+                            <div class="col-sm-10 mb-3">
+                                    <label for="montoprestamos">Monto:</label>
+                                    <input type="text" placeholder="$" class="form-control" name="montovisual" id="montovisual" disabled='disable'>
+                                    <input type='hidden' id='montopago' name='montopago'>
+                                    <div class="valid-feedback">
+                                        <!-- Please provide a valid zip. -->
+                                    </div>
                                 </div>
-                            </div>
                            
                             <div class="hr-line-dashed"></div>
-                            <div class="form-group">
-                                <label class="col-sm-2 control-label">
-                                    <label for="garante" class="wide required" aria-required="true">Garante:</label>
-                                </label>
-                                <div class="col-sm-10">
-                                    <input type="text" name="garante" value="" id="garante" class="form-control" placeholder="Escribe el nombre aquí..." style="display:" autocomplete="off">
+                            <div class="col-sm-6">
+                            <!-- select -->
+                                <div class="form-group">
+                                    <label>Select:</label>
+                                    <div class='view'>
+                                    <select class="form-control" id='funcion' name='funcion' >
+                                    <option value="interes">Interes</option>
+                                    <option value="abono">Abono</option>
+                                    <option value="capital">Capital</option>
+                                    <option value="reenganche">reeganche</option>
+                                    </select>
+
+                                    <div class="input-group">
+                                        <input type="text" class="form-control" name="interespago" id='interespago' disabled='disable'>
+                                        <div class="input-group-append">
+                                            <span class="input-group-text" style="background-color:white"><i class="fas fa-percentage"></i></span>
+                                        </div>
+                                    </div>
+                                </div>
+                               
+                             </div>
+                             <div class="form-group">
+                                    <input type="text" name="valorpago"  id="valorpago" class="form-control"  style="display:" autocomplete="off" disabled='disable' >
+                                    <input type="hidden" name='valorrealpago' id=valorrealpago>
 
                                 </div>
-                            </div>
+                                <br/>
                             <div class="hr-line-dashed"></div>
                             <div class="form-group">
                                 <label class="col-sm-3 control-label">

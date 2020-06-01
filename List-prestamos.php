@@ -78,10 +78,10 @@
                          <a href="panelUser.php?id=<?php echo generateURLSecure($user['id_prestamos']) ?>" title="Panel Control" class="btn bg-orange btn-flat margin">
                              <i class="fa fa-users-cog"></i> 
                         </a>
-                        <a href="#" title="Reenganchar" class="btn bg-orange btn-flat margin">
+                        <a href="#" title="Abonar Capital" class="btn bg-orange btn-flat margin" id='titlecapital'>
                           <i class="fa fa-handshake"></i>
                         </a>
-                        <a href="#" title="Reenganchar" class="btn bg-orange btn-flat margin">
+                        <a href="#" title="Abonar interes" class="btn bg-orange btn-flat margin" id='titleinteres'>
                         <i class="fa fa-dollar-sign"></i>
                         </a>
                       </td>

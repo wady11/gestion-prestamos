@@ -72,7 +72,7 @@ to get the desired effect
             <!-- small box -->
             <div class="small-box bg-info">
               <div class="inner">
-                <h3><?php echo $moneyShow['montototal']?></h3>
+                <h3 id='valordashboard'><?php echo $moneyShow['montototal']?></h3>
 
                 <p>Prestado</p>
               </div>
@@ -103,7 +103,7 @@ to get the desired effect
             <!-- small box -->
             <div class="small-box bg-warning">
               <div class="inner">
-                <h3>2,000,000</h3>
+                <h3 id='dashboardpagos'>200000</h3>
 
                 <p>Pagos</p>
               </div>
@@ -198,6 +198,20 @@ to get the desired effect
     </section>
     <!-- /.content -->
   </div>
+  <script src='js/accounting.min.js'></script>
+  <script>
+        
+      //accounting
+      let valorh1 = document.getElementById('valordashboard');
+      let pagoh1 = document.getElementById('dashboardpagos');
+
+      let dashBoardPago = parseInt(pagoh1.innerHTML); 
+      let dashBoardValor = Number(valorh1.innerHTML);
+
+      valorh1.innerHTML = accounting.formatMoney(dashBoardValor);
+      pagoh1.innerHTML = accounting.formatMoney(dashBoardPago);  
+  
+  </script>
 <?php
   include_once("templates/footer.php")
 ?>

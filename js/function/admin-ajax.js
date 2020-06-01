@@ -215,8 +215,30 @@ doc.addEventListener('DOMContentLoaded',()=>{
                data: data,
                dataType: "json",
                success: function (response) {
-                   let result = response
-                   console.log(result);
+                
+                   console.log(response)
+                   
+                   if(response.respuesta == 'success'){
+                            Swal.fire(
+                                'Se ha actualizado con Exito',
+                                `el prestamo de ${response.nombre} a sido creado`,
+                                'success'
+                            )
+                            setTimeout(()=>{
+                                location.href = "/Admin-LTE/List-prestamos.php";
+                                this.reset();
+                            },1000)         
+                   }else if(response.respuesta == 'reject'){
+                        Swal.fire(
+                            'ooops',
+                            `hubo un erro, el cliente ${response.nombre} ya tiene un prestamo creado`,
+                            'error'
+                        )
+                   }else if(response.respuesta == 'fail'){
+                            'ooops',
+                            'hubo un error, puede que no hayas completados los campos necesarios',
+                            'error'
+                   }
                    
                }
 

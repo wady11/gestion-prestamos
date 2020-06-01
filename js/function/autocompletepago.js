@@ -2,12 +2,19 @@
 
 //variables
 var currentFocus = 0;
-let createCedula = document.getElementById('numerocedula');
-let hiddenCedular = document.getElementById('cuentacliente');
+let crearCedula = document.getElementById('clientepago');
+let ocultarCedula = document.getElementById('cuentacliente');
+let mostrarMonto = document.getElementById('montovisual');
+let interesMostrar = document.getElementById('interespago');
+let cliente = document.getElementById("clientepago");
+let valorPago = document.getElementById('valorpago');
+
+
+
 
 window.addEventListener('load',()=>{
     
-function inputFunction(inp,arr,cedula){
+function inputFunction(inp,arr,cedula,monto,interes){
   /*execute a function when someone writes in the text field:*/
   inp.addEventListener("input", function(e) {
     var createDiv, createDivChild, val = this.value;
@@ -42,8 +49,13 @@ function inputFunction(inp,arr,cedula){
             inp.value = this.getElementsByTagName("input")[0].value;
             
             //fill inputcedula on clik
-            createCedula.value = cedula[incr];
-            hiddenCedular.value = cedula[incr];
+            ocultarCedula.value = cedula[incr];
+            mostrarMonto.value = MontoTrue(monto[incr]);
+            interesMostrar.value = interes[incr];
+            //validation function
+            valorPago.value = pagoComponent.interesFunction(interes[incr],mostrarMonto.value);
+            
+            //funcion
             closeAllLists(inp);
             
         });
@@ -54,8 +66,22 @@ function inputFunction(inp,arr,cedula){
 }
 
 
+//monto true
+function MontoTrue(valor){
+  if(valor){
+    return valor
+  }else{
+    Swal.fire(
+      'ooops',
+      `este cliente no tiene deudas!`,
+      'error'
+    )
+  }
+}
+
+
 function closeAllLists(elmnt,inp) {
-let val = document.getElementById("nombrecliente").value
+let val = document.getElementById("clientepago").value
 /*close all autocomplete lists in the document,
 except the one passed as an argument:*/
 var x = document.getElementsByClassName("autocomplete-list-item");
@@ -64,16 +90,17 @@ if (elmnt != x[i] && elmnt != inp) {
   x[i].parentNode.removeChild(x[i]);
 }
 }
-if(val == "") hiddenCedular.value = '';
+if(val == "") ocultarCedula.value = '';
 
 
 
 }
 
+//autocomplete function
 function autocomplete(inp, arr) {
 
 //input function
-inputFunction(inp,arr.nombre,arr.cedula);
+inputFunction(inp,arr.nombre,arr.cedula,arr.monto,arr.interes);
 
 
 /*execute a function presses a key on the keyboard:*/
@@ -130,7 +157,7 @@ document.addEventListener("click", function (e) {
 
 async function getPHP() {
   let country = await getArrayPhp();
-    autocomplete(document.getElementById("nombrecliente"), country);
+    autocomplete(cliente, country);
 }
 
 
@@ -138,13 +165,11 @@ async function getPHP() {
 const getArrayPhp = () => {
     return new Promise(async (resolve, reject) => {
         try {
-            const response = await fetch("/Admin-LTE/funciones/autocomplete.php");
+            const response = await fetch("/Admin-LTE/funciones/autocompletepago.php");
             const data = await response.json();
             resolve(data);
-            // console.log(data)
         } catch (error) {
-            reject(error);
-            console.error(error);
+            reject(error);    
         }
     });
 };
@@ -153,7 +178,13 @@ const getArrayPhp = () => {
  //async function 
   getPHP();
 
-})
+
+
+
+
+
+
+})//DOCUMENT LOADED
 
 
 

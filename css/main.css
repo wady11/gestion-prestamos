@@ -400,6 +400,27 @@ img.bill {
 .dataTables_empty {
     display: none;
 }
+.table-container {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    text-align: -webkit-center;
+}
+.panel{
+        width: 99%;
+        margin-bottom: 1rem;
+        color: #212529;
+        background-color: transparent;
+}
+.show{
+    display: none;
+}
+
+/******PAGO******/
+.view {
+    width: 100%;
+    display: flex;
+}
 /***MEDIA QUERY***/
 
 /* @media only screen and (min-width: 480px) {

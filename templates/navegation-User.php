@@ -80,7 +80,7 @@
           </li>
           <li class="nav-item has-treeview">
             <a href="#" class="nav-link">
-              <i class="nav-icon fas fa-dollar-sign"></i>
+            <i class="fas fa-handshake"></i>
               <p>
                 Prestamos
                 <i class="right fas fa-angle-left"></i>
@@ -101,8 +101,37 @@
               </li>
               <li class="nav-item">
                 <a href="/Admin-LTE/crearPrestamo.php" class="nav-link">
-                  <i class="fas fa-money-bill"></i>
+                  <i class="fas fa-business-time"></i>
                   <p>Prestamo nuevo</p>
+                </a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-item has-treeview">
+            <a href="#" class="nav-link">
+              <i class="nav-icon fas fa-dollar-sign"></i>
+              <p>
+                Pagos
+                <i class="right fas fa-angle-left"></i>
+              </p>
+            </a>
+            <ul class="nav nav-treeview">
+              <!-- <li class="nav-item">
+                <a href="../charts/chartjs.html" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>ChartJS</p>
+                </a>
+              </li> -->
+              <li class="nav-item">
+                <a href="#" class="nav-link">
+                <i class="fas fa-list nav-icon"></i>
+                  <p>Lista de Pagos</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="/Admin-LTE/crearPagos.php" class="nav-link">
+                <i class="fas fa-hand-holding-usd"></i>
+                  <p>Pagos</p>
                 </a>
               </li>
             </ul>

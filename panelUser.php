@@ -103,11 +103,11 @@
             
               </div><!--detail-container-->
                 <div class="button-container">
-                    <button class="show-movement"><img src="img/bill.png" class="bill"><p class="text-decoration">ver movimientos</p></button>
+                    <button class="show-movement" id='buttommovimiento'><img src="img/bill.png" class="bill"><p class="text-decoration">ver movimientos</p></button>
                 </div>
                 
-                <div class="table-container">
-        <table id="evento" class="table table-bordered table-striped">
+                <div class="table-container" >
+        <table id="paneluser" class="table table-bordered table-striped panel show">
                                                         <thead>
                                                             <tr>
                                                                 <th>Periodo</th>
@@ -119,7 +119,78 @@
                                                             </tr>
                                                         </thead>
                                                         <tbody id="tBody">
-
+                                                        <tr>
+                  <td>Trident</td>
+                  <td>Internet
+                    Explorer 4.0
+                  </td>
+                  <td>Win 95+</td>
+                  <td> 4</td>
+                  <td>X</td>
+                  <td>X</td>
+                </tr>
+                <tr>
+                  <td>Trident</td>
+                  <td>Internet
+                    Explorer 5.0
+                  </td>
+                  <td>Win 95+</td>
+                  <td>5</td>
+                  <td>C</td>
+                  <td>X</td>
+                </tr>
+                <tr>
+                  <td>Trident</td>
+                  <td>Internet
+                    Explorer 5.5
+                  </td>
+                  <td>Win 95+</td>
+                  <td>5.5</td>
+                  <td>A</td>
+                  <td>X</td>
+                </tr>
+                <tr>
+                  <td>Trident</td>
+                  <td>Internet
+                    Explorer 6
+                  </td>
+                  <td>Win 98+</td>
+                  <td>6</td>
+                  <td>A</td>
+                  <td>X</td>
+                </tr>
+                <tr>
+                  <td>Trident</td>
+                  <td>Internet Explorer 7</td>
+                  <td>Win XP SP2+</td>
+                  <td>7</td>
+                  <td>A</td>
+                  <td>X</td>
+                </tr>
+                <tr>
+                  <td>Trident</td>
+                  <td>AOL browser (AOL desktop)</td>
+                  <td>Win XP</td>
+                  <td>6</td>
+                  <td>A</td>
+                  <td>X</td>
+                </tr>
+                <tr>
+                  <td>Gecko</td>
+                  <td>Firefox 1.0</td>
+                  <td>Win 98+ / OSX.2+</td>
+                  <td>1.7</td>
+                  <td>A</td>
+                  <td>X</td>
+                </tr>
+                <tr>
+                  <td>Gecko</td>
+                  <td>Firefox 1.5</td>
+                  <td>Win 98+ / OSX.2+</td>
+                  <td>1.8</td>
+                  <td>A</td>
+                  <td>X</td>
+                </tr>
                                                         </tbody>
                                                         <tfoot>
                                                             <tr>
@@ -142,4 +213,6 @@
             
     </main>
 </body>
+<!--panelcontrol-->
+<script src='js/function/panelcontrol.js'></script>
 </html>
