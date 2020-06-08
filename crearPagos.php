@@ -19,14 +19,7 @@
             </div>
             <!-- /.container-fluid -->
         </section>
-            <?php
-               
 
-
-
-                
-            
-            ?>
         <!-- Main content -->
         <section class="content">
 

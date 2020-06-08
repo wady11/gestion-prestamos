@@ -215,8 +215,6 @@ doc.addEventListener('DOMContentLoaded',()=>{
                data: data,
                dataType: "json",
                success: function (response) {
-                
-                   console.log(response)
                    
                    if(response.respuesta == 'success'){
                             Swal.fire(
@@ -248,6 +246,23 @@ doc.addEventListener('DOMContentLoaded',()=>{
 
        }); // prestamos form   
 
+
+       $('#formpago').submit(function (e) { 
+        //    e.preventDefault();
+        
+           let data = $(this).serializeArray();
+
+           $.ajax({
+               type:$(this).attr('method'),
+               url: $(this).attr('action'),
+               data: data,
+               dataType: "json",
+               success: function (response) {
+                   console.log(response)
+               }
+           });
+           
+       });
 
 
        

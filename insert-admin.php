@@ -1,5 +1,9 @@
 <?php  
 include_once("funciones/conexion.php");//database conexion
+require_once('lib/classes/Main.php');
+
+//new instance
+$customers = new Main();
 
 if(isset($_POST['add-admin'])){
 
@@ -316,28 +320,50 @@ if (isset($_POST['add-prestamo'])) {
 
 if(isset($_POST['add-pago'])){
 
-echo '<pre>';
-    var_dump($_POST);
-echo '</pre>';
 
-$trueName = $_POST['name'];
-$trueId = $_POST['numerocedula'];
-$truepay = $_POST['montopago'];
-$trueFunction = $_POST['funcion'];
-$trueInteres = $_POST['hiddeninteres'];
-$truePayment = $_POST['valorrealpago'];
-$trueDate = $_POST['fechapago'];
-$descripcion = $_POST['description'];
+$trueName = $customers->secure_input($_POST['name']);
+$trueId = $customers->secure_input( $_POST['numerocedula']);
+$truepay = $customers->secure_input($_POST['montopago']);
+$trueFunction = $customers->secure_input($_POST['funcion']);
+$truePayment = $customers->secure_input($_POST['valorrealpago']);
+$trueDate = $customers->secure_input($_POST['fechapago']);
+$descripcion = $customers->secure_input($_POST['description']);
 
     try {
-     $sqlStament = $conn->prepare('INSERT INTO pagos (usuario,fecha,cantidad,montoanterio,tipopago,cedula_pago) VALUES(?,?,?,?,?,?);');  
-     $sqlStament->bind_param(); 
-        
+     $sqlStament = $conn->prepare('INSERT INTO `pagos` (usuario,fecha,cantidad,montoanterio,tipopago,cedula_pago,descripcion) VALUES(?,?,?,?,?,?,?);');  
+     $sqlStament->bind_param('ssdisss',$trueName,$trueDate,$truepay,$truePayment,$trueFunction,$trueId,$descripcion); 
+     $sqlStament->execute();
+
+    //import fields
+
+
+
+
+    // if(){
+
+    // } 
+            //arrow affected
+        if(mysqli_affected_rows($conn)> 0){
+            $answer = array (
+                'respuesta' => 'success',
+                'pago' => 'success'
+            );        
+        }else{
+            $answer = array (
+                'respuesta' => 'reject'
+            );
+        }
+
+       $sqlStament->close();
+       $conn->close();
+
     } catch (\Throwable $th) {
-        //throw $th;
+        $answer = array(
+            'respuesta' => $th->getMessage()
+        );
     }
 
-
+    die(json_encode($answer));
 }
 
 
