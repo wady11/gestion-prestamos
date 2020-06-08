@@ -314,6 +314,32 @@ if (isset($_POST['add-prestamo'])) {
 }
 
 
+if(isset($_POST['add-pago'])){
+
+echo '<pre>';
+    var_dump($_POST);
+echo '</pre>';
+
+$trueName = $_POST['name'];
+$trueId = $_POST['numerocedula'];
+$truepay = $_POST['montopago'];
+$trueFunction = $_POST['funcion'];
+$trueInteres = $_POST['hiddeninteres'];
+$truePayment = $_POST['valorrealpago'];
+$trueDate = $_POST['fechapago'];
+$descripcion = $_POST['description'];
+
+    try {
+     $sqlStament = $conn->prepare('INSERT INTO pagos (usuario,fecha,cantidad,montoanterio,tipopago,cedula_pago) VALUES(?,?,?,?,?,?);');  
+     $sqlStament->bind_param(); 
+        
+    } catch (\Throwable $th) {
+        //throw $th;
+    }
+
+
+}
+
 
 
 ?>

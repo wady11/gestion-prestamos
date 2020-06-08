@@ -2,12 +2,22 @@
 
 //variables
 var currentFocus = 0;
-let crearCedula = document.getElementById('clientepago');
+let nombreField = document.getElementById('clientepago');
 let ocultarCedula = document.getElementById('cuentacliente');
 let mostrarMonto = document.getElementById('montovisual');
 let interesMostrar = document.getElementById('interespago');
 let cliente = document.getElementById("clientepago");
 let valorPago = document.getElementById('valorpago');
+let combo = document.getElementById('funcion');
+let fechaActual = document.getElementById('fechapago');
+
+//hidden values
+let nameHidden = document.getElementById('hiddename');
+let hiddenCedula = document.getElementById('numerocedula');
+let hiddenMonto = document.getElementById('montopago');
+let hiddenInteres = document.getElementById('hiddeninteres');
+let hiddenValor = document.getElementById('valorrealpago');
+let hiddenFecha = document.getElementById('hiddenfechapago');
 
 
 
@@ -48,6 +58,8 @@ function inputFunction(inp,arr,cedula,monto,interes){
             /*insert the value for the autocomplete text field:*/
             inp.value = this.getElementsByTagName("input")[0].value;
             
+
+
             //fill inputcedula on clik
             ocultarCedula.value = cedula[incr];
             mostrarMonto.value = MontoTrue(monto[incr]);
@@ -55,6 +67,14 @@ function inputFunction(inp,arr,cedula,monto,interes){
             //validation function
             valorPago.value = pagoComponent.interesFunction(interes[incr],mostrarMonto.value);
             
+            //hiddden values
+            hiddenCedula.value = cedula[incr];
+            hiddenInteres.value = interes[incr];
+            hiddenMonto.value = valorPago.value;
+            hiddenValor.value = mostrarMonto.value;
+            nameHidden.value = nombreField.value
+           console.log(nombreField.value)
+
             //funcion
             closeAllLists(inp);
             

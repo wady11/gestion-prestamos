@@ -12,7 +12,7 @@
         <div class="container-panel">
             <?php
                 //sql section
-                $sqlQuery = "SELECT id_prestamos, nombre_prestamo, interes_prestamos,estado_prestamo,user.user_cedula FROM prestamos INNER JOIN user on prestamos.id_prestamos = user.user_id";
+                $sqlQuery = "SELECT id_prestamos, nombre_prestamo, interes_prestamos,monto_prestamo,estado_prestamo,user.user_cedula FROM prestamos INNER JOIN user on prestamos.id_prestamos = user.user_id";
                 $result = $conn->query($sqlQuery);
             
                 
@@ -58,8 +58,8 @@
                             <div class="text-container">
                                 <p class="text">Numero de cedula:</p>
                                 <p class="text">Estado:</p>
-                                <p class="text">Ultimo prestamo:</p>
-                                <p class="text">Monto total Adeudado:</p>
+                                <p class="text">Ultimo pago:</p>
+                                <p class="text">Deuda Actual:</p>
                                 <p class="text">Intereses:</p>
                             </div>
 
@@ -67,7 +67,7 @@
                                 <p class="information"><?php echo $selectId['user_cedula'] ?></p> 
                                 <p class="information"><?php echo $selectId['estado_prestamo']?></p>
                                 <p class="information">RD$ 2500</p>
-                                <p class="information">RD$ 10000</p>
+                                <p class="information">RD$ <?php echo $selectId['monto_prestamo']?></p>
                                 <p class="information"><?php echo $selectId['interes_prestamos']?>%</p>
                             </div>
                           
@@ -92,7 +92,7 @@
                                     <a href="#"> <img src="img/pay.png" alt="cash" class="quick-img">Abonar</a>
                                     </li>
                                     <li>
-                                    <a href="#"> <img src="img/cash.png" alt="pay" class="quick-img">Pagar</a>
+                                    <a href="/Admin-LTE/crearPagos.php?id=<?php echo $id?>"> <img src="img/cash.png" alt="pay" class="quick-img">Pagar</a>
                                     </li>
                                     <li>
                                     <a href="#" title="reenganche"><i class="fa fa-handshake plus"></i>Reenganche</a>

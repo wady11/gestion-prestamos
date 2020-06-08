@@ -5,7 +5,6 @@ let montoPago = document.getElementById('montovisual');
 let mostrarInteres = document.getElementById('interespago');
 let totalPago = document.getElementById('valorpago');
 let monto = 0;
-//hidden values
 
 
 function interesFunction(element,valor){
@@ -15,7 +14,7 @@ function interesFunction(element,valor){
 }
 
 
-    
+    //alert function
     function controlPayment(valor){
         totalPago.value = '';
         totalPago.disabled = false;
@@ -79,18 +78,7 @@ function interesFunction(element,valor){
                 controlPayment(monto);    
             }
              break;
-        
-        case 'reenganche' : 
-        if(monto == 0){
-            Swal.fire(
-                'ooops',
-                `debe ingresar un cliente para proceder el pago!`,
-                'error'
-              ) 
-        }else{
-            controlPayment(monto);    
-        }
-        break;
+
     
          default:
            break;
