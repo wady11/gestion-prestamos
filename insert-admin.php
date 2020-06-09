@@ -8,9 +8,9 @@ $customers = new Main();
 if(isset($_POST['add-admin'])){
 
     
-    $user = $_POST ['user'];
-    $name = $_POST['name'];
-    $password = $_POST ['password'];
+    $user = $customers->secure_input($_POST['user']);
+    $name = $customers->secure_input($_POST['name']);
+    $password = $customers->secure_input($_POST ['password']);
 
     $opcion = array(
         'cost'=>12
@@ -65,8 +65,8 @@ if(isset($_POST['add-admin'])){
 
 if(isset($_POST['send-login'])){
 
-    $usuario = $_POST['usuario'];
-    $password_usuario = $_POST['password'];
+    $usuario = $customers->secure_input($_POST['usuario']);
+    $password_usuario = $customers->secure_input($_POST['password']);
 
     try {
         //conexion a la base de datos
@@ -136,24 +136,22 @@ if(isset($_POST['send-login'])){
 if(isset($_POST['add-user'])){
 
    //variable
-    $nombreUsuario = $_POST['name'];
-    $apellidoUsuario = $_POST['lastName'];
-    $emailUsuario = $_POST['email'];
-    $direccionUsuario = $_POST['address'];
-    $telephonoUsuario = $_POST['telePhone'];
-    $cellphoneUsuario = $_POST['cellPhone'];
-    $cityUsuario = $_POST['city'];
-    $townUsuario = $_POST['town'];
-    $bankUsuario = $_POST['banc'];
-    $acountBankUsuario = $_POST['bancAccount'];
-    $dateUsuario = $_POST['date'];
-    $cedulaUsuario = $_POST['cedula'];
+    $nombreUsuario = $customers->secure_input($_POST['name']);
+    $apellidoUsuario = $customers->secure_input($_POST['lastName']);
+    $emailUsuario = $customers->secure_input($_POST['email']);
+    $direccionUsuario = $customers->secure_input($_POST['address']);
+    $telephonoUsuario = $customers->secure_input($_POST['telePhone']);
+    $cellphoneUsuario = $customers->secure_input($_POST['cellPhone']);
+    $cityUsuario = $customers->secure_input($_POST['city']);
+    $townUsuario = $customers->secure_input($_POST['town']);
+    $bankUsuario = $customers->secure_input($_POST['banc']);
+    $acountBankUsuario = $customers->secure_input($_POST['bancAccount']);
+    $dateUsuario = $customers->secure_input($_POST['date']);
+    $cedulaUsuario = $customers->secure_input($_POST['cedula']);
 
     try {
         $sthm = $conn->prepare("INSERT INTO `user` (user_name,user_lastname,user_email,user_address,user_cedula,user_telephone,user_cellphone,user_city,user_town,user_bank,user_bankaccount,user_date) VALUES(?,?,?,?,?,?,?,?,?,?,?,?)");//insert table with
         $sthm->bind_param("ssssssssssss",$nombreUsuario,$apellidoUsuario,$emailUsuario,$direccionUsuario,$cedulaUsuario,$telephonoUsuario,$cellphoneUsuario,$cityUsuario,$townUsuario,$bankUsuario,$acountBankUsuario,$dateUsuario);//para que sea segura 
-        
-       
         $sthm->execute();//execute conexion
 
         //if any rows was affect
@@ -205,19 +203,19 @@ if(isset($_POST['edit'])){
     //     var_dump($_POST);
     // echo '</pre>';
     // die();
-    $nombreUsuario = $_POST['name'];
-    $apellidoUsuario = $_POST['lastName'];
-    $emailUsuario = $_POST['email'];
-    $direccionUsuario = $_POST['address'];
-    $telephonoUsuario = $_POST['telePhone'];
-    $cellphoneUsuario = $_POST['cellPhone'];
-    $cityUsuario = $_POST['city'];
-    $townUsuario = $_POST['town'];
-    $bankUsuario = $_POST['banc'];
-    $acountBankUsuario = $_POST['bancAccount'];
-    $dateUsuario = $_POST['date'];
-    $cedulaUsuario = $_POST['cedula'];
-    $id_user = $_POST['number-edit'];
+    $nombreUsuario =$customers->secure_input($_POST['name']);
+    $apellidoUsuario =$customers->secure_input($_POST['lastName']);
+    $emailUsuario =$customers->secure_input($_POST['email']);
+    $direccionUsuario =$customers->secure_input($_POST['address']);
+    $telephonoUsuario =$customers->secure_input($_POST['telePhone']);
+    $cellphoneUsuario =$customers->secure_input($_POST['cellPhone']);
+    $cityUsuario =$customers->secure_input($_POST['city']);
+    $townUsuario =$customers->secure_input($_POST['town']);
+    $bankUsuario =$customers->secure_input($_POST['banc']);
+    $acountBankUsuario =$customers->secure_input($_POST['bancAccount']);
+    $dateUsuario =$customers->secure_input ($_POST['date']);
+    $cedulaUsuario =$customers->secure_input($_POST['cedula']);
+    $id_user =$customers->secure_input($_POST['number-edit']);
       
         try {
             $stament = $conn->prepare("UPDATE `user` SET user_name = ? ,user_lastname = ?,user_email= ?,user_address = ? ,user_cedula = ? ,user_telephone= ? ,user_cellphone = ? , user_city = ? ,user_town= ? ,user_bank = ? ,user_bankaccount = ? , user_date = ?, user_time= NOW() WHERE user_id = ? ;");
@@ -260,16 +258,16 @@ if (isset($_POST['add-prestamo'])) {
 
     // echo '</pre>';
 
-    $nombreCliente = $_POST['nombrecliente'];
-    $numeroCedula = $_POST['numerocedula'];
-    $descripcionCLiente = $_POST['description'];
-    $garanteCliente = $_POST['garante'];
-    $statePrestamo = $_POST['estadoprestamo'];
-    $montoPrestamo = $_POST['montoprestamos'];
-    $interesPrestamo = $_POST['interesprestamo'];
-    $termsCliente = $_POST['term'];
-    $formatoPago = $_POST['periodo'];   
-    $fechaPrestamo = $_POST['fechaprestamo'];
+    $nombreCliente = $customers->secure_input($_POST['nombrecliente']);
+    $numeroCedula = $customers->secure_input($_POST['numerocedula']);
+    $descripcionCLiente = $customers->secure_input($_POST['description']);
+    $garanteCliente = $customers->secure_input($_POST['garante']);
+    $statePrestamo = $customers->secure_input($_POST['estadoprestamo']);
+    $montoPrestamo = $customers->secure_input($_POST['montoprestamos']);
+    $interesPrestamo = $customers->secure_input($_POST['interesprestamo']);
+    $termsCliente = $customers->secure_input($_POST['term']);
+    $formatoPago = $customers->secure_input($_POST['periodo']);   
+    $fechaPrestamo = $customers->secure_input($_POST['fechaprestamo']);
     
 
         try {
