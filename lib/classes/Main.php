@@ -15,6 +15,11 @@ class Main{
     }
 
 
+      //GENERATE  SECURE URL
+     public function generateURLSecure($userId){
+        return  sha1($userId);
+      }
+
 
 
 

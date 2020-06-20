@@ -71,7 +71,7 @@
           <!-- Menu Footer-->
           <li class="user-footer">
             <a href="/Admin-LTE/profile.php" class="btn btn-default btn-flat">Profile</a>
-            <a href="login.php?signout=true" class="btn btn-default btn-flat float-right">Sign out</a>
+            <a href="index.php?signout=true" class="btn btn-default btn-flat float-right">Sign out</a>
           </li>
         </ul>
       </li>

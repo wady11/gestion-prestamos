@@ -57,9 +57,9 @@
                             </div>
                             <div class="hr-line-dashed"></div>
                             <div class="col-sm-10 mb-3">
-                                    <label for="montopago">Monto:</label>
+                                    <label for="montopagoanterior">Monto:</label>
                                     <input type="text" placeholder="$" class="form-control"  id="montovisual" disabled='disable'>
-                                    <input type='hidden' id='montopago' name='montopago'>
+                                    <input type='hidden' id='montopagoanterior' name='montopagoanterior'>
                                     <div class="valid-feedback">
                                         <!-- Please provide a valid zip. -->
                                     </div>

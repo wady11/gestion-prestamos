@@ -123,7 +123,7 @@
                 </a>
               </li> -->
               <li class="nav-item">
-                <a href="#" class="nav-link">
+                <a href="/Admin-LTE/listPago.php" class="nav-link">
                 <i class="fas fa-list nav-icon"></i>
                   <p>Lista de Pagos</p>
                 </a>

@@ -5,9 +5,9 @@
     
 
     //just in case of error
-    if($conn-> connect_error){
-        echo $error -> $conn->connect_error;                                                                            
-    }                                   
+        if($conn-> connect_error){
+            echo $error -> $conn->connect_error;                                                                            
+        }                                   
                              
 
     //para saber si esta conectado a la base datos
@@ -17,6 +17,6 @@
     //     echo 'no conectado';
     // }
     
-   
+
 
 ?>

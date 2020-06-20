@@ -4,18 +4,21 @@ let comboBox = document.getElementById('funcion');
 let montoPago = document.getElementById('montovisual');
 let mostrarInteres = document.getElementById('interespago');
 let totalPago = document.getElementById('valorpago');
+let cambiaMonto = document.getElementById('montopago');
+
 let monto = 0;
 
-
+//calculo de interes
 function interesFunction(element,valor){
     let interes = Number.parseFloat(element);
     monto = Number.parseFloat(valor) 
-         return (interes / 100) * monto;   
+    return (interes / 100) * monto;   
 }
 
 
     //alert function
     function controlPayment(valor){
+        let hiddenValor = document.getElementById('valorrealpago');
         totalPago.value = '';
         totalPago.disabled = false;
         window.addEventListener('click',(e)=>{
@@ -27,7 +30,10 @@ function interesFunction(element,valor){
             )
             totalPago.value = '';
             totalPago.focus();
+          }else{
+              hiddenValor.value = totalPago.value;
           }
+
         })
         
     
@@ -54,6 +60,7 @@ function interesFunction(element,valor){
            break;
          
          case 'abono' : 
+              // hiddenMonto.value = 0;
                 if(monto == 0){
                     Swal.fire(
                         'ooops',
@@ -61,13 +68,14 @@ function interesFunction(element,valor){
                         'error'
                       ) 
                 }else{
-                    controlPayment(monto);    
+                    controlPayment(monto);   
+
                 }
                   
            break;
-         
-    
+             
          case 'capital' : 
+        //  hiddenMonto.value = 0;
          if(monto == 0){
             Swal.fire(
                 'ooops',

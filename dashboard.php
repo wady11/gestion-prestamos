@@ -5,7 +5,7 @@ include_once("templates/header.php");
 include_once("templates/header-bar-user.php");
 include_once("templates/navegation-User.php");
 include_once("funciones/conexion.php");
-
+ 
 ?>
 <!--
 BODY TAG OPTIONS:
@@ -36,6 +36,9 @@ to get the desired effect
     <!-- /.content-header -->
     <?php
 
+     
+
+      //  echo $showCliente;
         //show client
         try {
           $sqlshow = 'SELECT  COUNT(*) as client FROM `user`';
@@ -49,11 +52,21 @@ to get the desired effect
 
         //show total money borred
         try {
-          $sqlMoney = 'SELECT SUM(monto_prestamo) AS montototal FROM  `prestamos`';
+          $sqlMoney = 'SELECT prestamos.monto_prestamo - SUM(pagos.cantidad) AS prestamos from pagos INNER JOIN prestamos WHERE pagos.tipopago IN ("abono","capital")';
           $showMoney = $conn->query($sqlMoney);
           $moneyShow = $showMoney->fetch_assoc();
         } catch (\Throwable $the) {
           $er = $the->message();
+          // echo $er ;
+        }
+
+
+        try {
+          $sqlPay = 'SELECT SUM(cantidad) as sumaTotal from pagos WHERE tipopago IN ("abono","capital")';
+          $showPay = $conn->query($sqlPay);
+          $payShow = $showPay->fetch_assoc();
+        } catch (\Throwable $the) {
+          $errorPay = $the->message();
           // echo $er ;
         }
       //  echo '<pre
@@ -72,7 +85,7 @@ to get the desired effect
             <!-- small box -->
             <div class="small-box bg-info">
               <div class="inner">
-                <h3 id='valordashboard'><?php echo $moneyShow['montototal']?></h3>
+                <h3 id='valordashboard'><?php echo $moneyShow['prestamos']?></h3>
 
                 <p>Prestado</p>
               </div>
@@ -103,14 +116,14 @@ to get the desired effect
             <!-- small box -->
             <div class="small-box bg-warning">
               <div class="inner">
-                <h3 id='dashboardpagos'>200000</h3>
+                <h3 id='dashboardpagos'><?php echo $payShow['sumaTotal']  ?></h3>
 
                 <p>Pagos</p>
               </div>
               <div class="icon">
               <img src="img/dollar.ico" class="icon-img" alt="Dollar">
               </div>
-              <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+              <a href="listPago.php" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
             </div>
           </div>
           <!-- ./col -->

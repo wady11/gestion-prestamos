@@ -318,28 +318,52 @@ if (isset($_POST['add-prestamo'])) {
 
 if(isset($_POST['add-pago'])){
 
+    // echo '<pre>';
+    //     var_dump($_POST);
+    // echo '</pre>';
 
+    // die();
+//variable
 $trueName = $customers->secure_input($_POST['name']);
 $trueId = $customers->secure_input( $_POST['numerocedula']);
-$truepay = $customers->secure_input($_POST['montopago']);
+$truepay = $customers->secure_input($_POST['montopagoanterior']);
 $trueFunction = $customers->secure_input($_POST['funcion']);
 $truePayment = $customers->secure_input($_POST['valorrealpago']);
 $trueDate = $customers->secure_input($_POST['fechapago']);
 $descripcion = $customers->secure_input($_POST['description']);
 
     try {
-     $sqlStament = $conn->prepare('INSERT INTO `pagos` (usuario,fecha,cantidad,montoanterio,tipopago,cedula_pago,descripcion) VALUES(?,?,?,?,?,?,?);');  
-     $sqlStament->bind_param('ssdisss',$trueName,$trueDate,$truepay,$truePayment,$trueFunction,$trueId,$descripcion); 
-     $sqlStament->execute();
 
-    //import fields
+            switch ($trueFunction) {
+                case 'interes':
+                        // $sqlStament = $conn->prepare('INSERT INTO `pagos` (usuario,fecha,cantidad,montoanterio,tipopago,cedula_pago,descripcion) VALUES(?,?,?,?,?,?,?);');  
+                        // $sqlStament->bind_param('ssdisss',$trueName,$trueDate,$truepay,$truePayment,$trueFunction,$trueId,$descripcion); 
+                        // $sqlStament->execute();
+                    break;
+                case 'abono':
+                        // $sqlStament = $conn->prepare('INSERT INTO `pagos` (usuario,fecha,(montoanterio-cantidad) as cantidad,montoanterio,tipopago,cedula_pago,descripcion) VALUES(?,?,?,?,?,?,?);');  
+                        // $sqlStament->bind_param('ssdisss',$trueName,$trueDate,$truepay,$truePayment,$trueFunction,$trueId,$descripcion); 
+                        // $sqlStament->execute();
+                    break;
+                    
+                case 'capital':
+                        $sqlStament = $conn->prepare('INSERT INTO `pagos` (usuario,fecha,cantidad,montoanterio,tipopago,cedula_pago,descripcion) VALUES(?,?,?,?,?,?,?);');  
+                        $sqlStament->bind_param('ssdisss',$trueName,$trueDate,$truePayment,$truepay,$trueFunction,$trueId,$descripcion); 
+                        $sqlStament->execute();  
+                    break;
 
+                default:
+                    $respuesta = array (
+                        'respuestas'=> 'something went wrong'
+                        );
+                    break;
+            
+                        
 
-
-
-    // if(){
-
-    // } 
+        }//switch
+        
+        
+    
             //arrow affected
         if(mysqli_affected_rows($conn)> 0){
             $answer = array (
@@ -362,6 +386,8 @@ $descripcion = $customers->secure_input($_POST['description']);
     }
 
     die(json_encode($answer));
+
+
 }
 
 
